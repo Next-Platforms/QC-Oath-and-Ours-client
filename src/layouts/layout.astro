@@ -1,4 +1,6 @@
 ---
+import { Icon } from 'astro-icon/components'
+
 interface Props {
 	title: string
 }
@@ -17,14 +19,10 @@ const { title } = Astro.props
 		<title>{title}</title>
 	</head>
 	<body>
-		<header class="w-full flex items-center justify-center">
-			<nav class="flex items-center justify-between w-full px-20">
+		<header class="w-full flex items-center justify-center h-20">
+			<nav class="flex items-center justify-evenly w-full">
 				<div class="flex items-center gap-4">
-					<p class="text-red-500">
-						トップページへの <br />
-						リンクつけてください→
-					</p>
-					<div>Oath and ours</div>
+					<Icon class="w-[192px] h-auto aspect-[100/24]" name="logo" />
 				</div>
 				<div class="flex items-center gap-4">
 					<div>

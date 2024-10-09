@@ -6,6 +6,8 @@ import ColumnCard from '../components/column-card.astro'
 import FlowStep from '../components/flow-step.astro'
 import VoiceCard from '../components/voice-card.astro'
 
+import { Icon } from 'astro-icon/components'
+
 // const res = await fetch("http://wedding.test/wp-json/wp/v2/posts");
 // const posts = await res.json();
 // console.log(posts);
@@ -17,8 +19,10 @@ import VoiceCard from '../components/voice-card.astro'
 		<div class="relative w-full bg-peach pb-[106px]">
 			<div class="min-h-screen flex items-center w-full relative">
 				<div class="flex flex-col gap-8 z-10 relative ml-[100px]">
-					<div class="bg-white text-[54px] max-w-max">8000本の花で彩る</div>
-					<div class="bg-white text-[54px] ml-[56px] max-w-max">結婚の誓いを一枚の写真に</div>
+					<div class="bg-white text-[54px] max-w-max leading-[64px]">8000本の花で彩る</div>
+					<div class="bg-white text-[54px] ml-12 max-w-max leading-[64px]">
+						結婚の誓いを一枚の写真に
+					</div>
 				</div>
 				<img
 					class="absolute top-0 h-full object-cover object-top rounded-bl-[200px] aspect-[19/10] right-0 overflow-hidden"
@@ -32,18 +36,22 @@ import VoiceCard from '../components/voice-card.astro'
 	<!-- Hero section 2 -->
 	<div class="min-h-screen flex items-center justify-end w-full py-[172px]">
 		<div class="flex items-center gap-24">
-			<div>
-				<h2 class="max-w-[40rem] text-[42px]">
+			<div class="flex flex-col">
+				<h2 class="max-w-[40rem] text-[42px] leading-[71px]">
 					お二人の「やりたい」を <br />
 					全て叶えるスタジオ
 				</h2>
-				<p class="max-w-[45rem] text-[24px]">
+				<p class="max-w-[45rem] text-[24px] leading-[37px] mt-[71px]">
 					1万本の花が演出するロマンティックな雰囲気を再現した洋装スタジオから、日本の美を凝縮した和装スタジオ、時にはスタジオを飛び出してロケーション撮影まで。お二人のやりたいを叶えた特別な瞬間を写真に収めます。
 				</p>
+				<div class="flex items-center ml-auto mt-[61px] gap-2 w-full max-w-[192px]">
+					<span class="shrink-0">詳しく知る</span>
+					<span class="h-1 w-full bg-black"></span>
+				</div>
 			</div>
 			<img
 				class="max-w-[864px] rounded-l-[75px] overflow-hidden"
-				src="/hero.jpg"
+				src="/hero-2.jpg"
 				alt="A wedding picture"
 			/>
 		</div>
@@ -83,7 +91,10 @@ import VoiceCard from '../components/voice-card.astro'
 
 				<span class="h-1 w-full bg-black"></span>
 			</div>
-			<div class="text-base">IG Instagramをチェック</div>
+			<div class="text-base flex items-end gap-3">
+				<Icon class="w-[30px] h-auto aspect-square" name={'instagram'} />
+				Instagramをチェック
+			</div>
 		</div>
 	</div>
 
@@ -172,7 +183,8 @@ import VoiceCard from '../components/voice-card.astro'
 				new Array(5)
 					.fill({
 						title: 'まずは当スタジオの全てが分かるLINEに登録！',
-						body: `当スタジオのLINE公式アカウントよりお友達登録をお願いします。スタジオのブースやおすすめロケ地が見られたり、料金プラン詳細やドレスの種類の確認など、LINE公式アカウントでしか見られない「当スタジオの全て」が盛り沢山です！`
+						body: `当スタジオのLINE公式アカウントよりお友達登録をお願いします。スタジオのブースやおすすめロケ地が見られたり、料金プラン詳細やドレスの種類の確認など、LINE公式アカウントでしか見られない「当スタジオの全て」が盛り沢山です！`,
+						image: '/flow-1.jpeg'
 					})
 					.map((item, idx) => {
 						const isLast = idx === 4
@@ -182,8 +194,9 @@ import VoiceCard from '../components/voice-card.astro'
 									step={`${idx + 1}`.padStart(2, '0')}
 									title={item.title}
 									body={item.body}
+									image={item.image}
 								/>
-								{!isLast ? <div class="w-2 h-2 bg-black mt-[39px] mb-[30px]" /> : null}
+								{!isLast ? <Icon name="down-arrow" class="w-2 h-2 mt-[39px] mb-[30px]" /> : null}
 							</>
 						)
 					})
