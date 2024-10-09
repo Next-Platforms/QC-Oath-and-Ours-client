@@ -1,0 +1,9 @@
+/* The integration's default injected base.css file */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --peach: 27 27% 92%;
+  --lime: 145 94% 40%;
+}

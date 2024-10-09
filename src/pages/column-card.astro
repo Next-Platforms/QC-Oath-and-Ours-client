@@ -1,0 +1,39 @@
+---
+export interface Props {
+  title: string;
+  tags: string[];
+  date: string;
+}
+
+const { tags, title, date } = Astro.props;
+---
+
+<div
+  class="flex flex-col w-[360px] bg-white rounded-t-xl overflow-hidden shadow-lg"
+>
+  <img class="w-full object-cover h-[186px]" src="/hero.jpg" />
+  <div class="pt-5 pb-[26px] px-5">
+    <div class="w-full flex items-center justify-between">
+      <div class="flex items-center gap-[5px]">
+        {
+          tags[0] ? (
+            <span class="text-sm px-[10px] py-[5px] rounded-md text-white bg-black">
+              {tags[0]}
+            </span>
+          ) : null
+        }
+        {
+          tags[1] ? (
+            <span class="text-sm px-[10px] py-[5px] rounded-md text-white bg-[#BB9C52]">
+              {tags[1]}
+            </span>
+          ) : null
+        }
+      </div>
+      <span>{date}</span>
+    </div>
+    <p class="leading-[27px] mt-4">
+      {title}
+    </p>
+  </div>
+</div>
