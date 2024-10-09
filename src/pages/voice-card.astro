@@ -1,21 +1,19 @@
 ---
 export interface Props {
-  body: string;
-  author: string;
+	body: string
+	author: string
 }
 
-const { author, body } = Astro.props;
+const { author, body } = Astro.props
 ---
 
-<div
-  class="p-[26px] bg-white rounded-xl w-full max-w-[400px] flex flex-col shrink-0"
->
-  <img class="w-full h-[240px]" src="/hero.jpg" />
-  <p class="text-base leading-[33px]">
-    {body}
-  </p>
-  <span class="text-base mt-[26px] inline-block ml-auto max-w-max"
-    >洋装スタジオプラン
-    {author}
-  </span>
+<div class="p-[26px] bg-white rounded-xl w-full max-w-[400px] flex flex-col shrink-0">
+	<img class="w-full h-[240px]" src="/hero.jpg" />
+	<p class="text-base leading-[33px]">
+		{body}
+	</p>
+	<span class="text-base mt-[26px] inline-block ml-auto max-w-max"
+		>洋装スタジオプラン
+		{author}
+	</span>
 </div>

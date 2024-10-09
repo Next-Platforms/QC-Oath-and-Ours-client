@@ -1,27 +1,25 @@
 ---
 export interface Props {
-  step: string | number;
-  title: string;
-  body: string;
+	step: string | number
+	title: string
+	body: string
 }
 
-const { step, title, body } = Astro.props;
+const { step, title, body } = Astro.props
 ---
 
 <div class="flex flex-col">
-  <span
-    class="bg-black text-white leading-none w-full max-w-[305px] rounded-tr-[50px] py-5 flex items-center justify-center text-xl gap-2 font-bold"
-    ><span>STEP</span><b class="text-3xl">{step}</b></span
-  >
-  <div
-    class="p-[26px] flex items-center gap-10 border-2 border-black rounded-b-xl"
-  >
-    <img class="w-full max-w-[515px] rounded-lg h-[280px]" src="/hero.jpg" />
-    <div class="flex flex-col gap-[27px]">
-      <span class="text-[25px] leading-[40px]">{title}</span>
-      <p class="text-base leading-[33px]">
-        {body}
-      </p>
-    </div>
-  </div>
+	<span
+		class="bg-black text-white leading-none w-full max-w-[305px] rounded-tr-[50px] py-5 flex items-center justify-center text-xl gap-2 font-bold"
+		><span>STEP</span><b class="text-3xl">{step}</b></span
+	>
+	<div class="p-[26px] flex items-center gap-10 border-2 border-black rounded-b-xl">
+		<img class="w-full max-w-[515px] rounded-lg h-[280px]" src="/hero.jpg" />
+		<div class="flex flex-col gap-[27px]">
+			<span class="text-[25px] leading-[40px]">{title}</span>
+			<p class="text-base leading-[33px]">
+				{body}
+			</p>
+		</div>
+	</div>
 </div>

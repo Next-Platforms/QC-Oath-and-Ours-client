@@ -1,47 +1,44 @@
 ---
 export interface Props {
-  heading: string;
-  title: string;
-  body: string;
-  subItems: string[];
-  price: string;
-  ctaLink: string;
+	heading: string
+	title: string
+	body: string
+	subItems: string[]
+	price: string
+	ctaLink: string
 }
 
-const { heading, title, body, subItems, price, ctaLink } = Astro.props;
+const { heading, title, body, subItems, price, ctaLink } = Astro.props
 ---
 
-<div
-  class="w-full flex shadow-lg rounded-xl overflow-hidden even:flex-row-reverse"
->
-  <img src="./hero.jpg" class="w-full object-cover" />
-  <div class="w-full flex flex-col items-center text-center px-10 py-10">
-    <div class="text-base">{heading}</div>
-    <b class="mt-[20px] text-[35px]">{title}</b>
-    <p class="text-base max-w-[420px] mt-6 text-justify leading-[33px]">
-      {body}
-    </p>
-    <div class="mt-[27px] flex items-center gap-3">
-      {
-        subItems.map((item) => {
-          return (
-            <button class="text-center text-nowrap text-base h-8 border-2 rounded px-2 border-black max-w-[160px] overflow-hidden">
-              {item}
-            </button>
-          );
-        })
-      }
-    </div>
-    <div class="mt-[26px] flex items-baseline gap-2">
-      <span class="text-base">¥</span>
-      <b class="text-4xl font-bold">{price}</b>
-      <p class="text-base">(税込)</p>
-    </div>
-    <a
-      href={ctaLink}
-      class="mt-4 px-8 h-[46px] text-nowrap bg-lime rounded-md text-white inline-flex items-center justify-center"
-      ><span class="font-semibold">LINE</span>{" "}<span>で問い合わせる</span
-      ></a
-    >
-  </div>
+<div class="w-full flex shadow-lg rounded-xl overflow-hidden even:flex-row-reverse">
+	<img src="./hero.jpg" class="w-full object-cover" />
+	<div class="w-full flex flex-col items-center text-center px-10 py-10">
+		<div class="text-base">{heading}</div>
+		<b class="mt-[20px] text-[35px]">{title}</b>
+		<p class="text-base max-w-[420px] mt-6 text-justify leading-[33px]">
+			{body}
+		</p>
+		<div class="mt-[27px] flex items-center gap-3">
+			{
+				subItems.map((item) => {
+					return (
+						<button class="text-center text-nowrap text-base h-8 border-2 rounded px-2 border-black max-w-[160px] overflow-hidden">
+							{item}
+						</button>
+					)
+				})
+			}
+		</div>
+		<div class="mt-[26px] flex items-baseline gap-2">
+			<span class="text-base">¥</span>
+			<b class="text-4xl font-bold">{price}</b>
+			<p class="text-base">(税込)</p>
+		</div>
+		<a
+			href={ctaLink}
+			class="mt-4 px-8 h-[46px] text-nowrap bg-lime rounded-md text-white inline-flex items-center justify-center"
+			><span class="font-semibold">LINE</span>{' '}<span>で問い合わせる</span></a
+		>
+	</div>
 </div>

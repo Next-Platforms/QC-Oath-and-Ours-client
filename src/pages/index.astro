@@ -1,10 +1,10 @@
 ---
-import "../styles/globals.css";
-import Layout from "../layouts/layout.astro";
-import PlanCard, { type Props } from "./plan-card.astro";
-import ColumnCard from "./column-card.astro";
-import FlowStep from "./flow-step.astro";
-import VoiceCard from "./voice-card.astro";
+import '../styles/globals.css'
+import Layout from '../layouts/layout.astro'
+import PlanCard, { type Props } from './plan-card.astro'
+import ColumnCard from './column-card.astro'
+import FlowStep from './flow-step.astro'
+import VoiceCard from './voice-card.astro'
 
 // const res = await fetch("http://wedding.test/wp-json/wp/v2/posts");
 // const posts = await res.json();
@@ -12,273 +12,249 @@ import VoiceCard from "./voice-card.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <!-- Hero section 1 -->
-  <div class="w-full">
-    <div class="relative w-full bg-peach pb-[106px]">
-      <div class="min-h-screen flex items-center w-full relative">
-        <div class="flex flex-col gap-8 z-10 relative ml-[100px]">
-          <div class="bg-white text-[54px] max-w-max">8000本の花で彩る</div>
-          <div class="bg-white text-[54px] ml-[56px] max-w-max">
-            結婚の誓いを一枚の写真に
-          </div>
-        </div>
-        <img
-          class="absolute top-0 h-full object-cover object-top rounded-bl-[200px] aspect-[19/10] right-0 overflow-hidden"
-          src="/hero.jpg"
-          alt="A wedding picture"
-        />
-      </div>
-    </div>
-  </div>
+	<!-- Hero section 1 -->
+	<div class="w-full">
+		<div class="relative w-full bg-peach pb-[106px]">
+			<div class="min-h-screen flex items-center w-full relative">
+				<div class="flex flex-col gap-8 z-10 relative ml-[100px]">
+					<div class="bg-white text-[54px] max-w-max">8000本の花で彩る</div>
+					<div class="bg-white text-[54px] ml-[56px] max-w-max">結婚の誓いを一枚の写真に</div>
+				</div>
+				<img
+					class="absolute top-0 h-full object-cover object-top rounded-bl-[200px] aspect-[19/10] right-0 overflow-hidden"
+					src="/hero.jpg"
+					alt="A wedding picture"
+				/>
+			</div>
+		</div>
+	</div>
 
-  <!-- Hero section 2 -->
-  <div class="min-h-screen flex items-center justify-end w-full py-[172px]">
-    <div class="flex items-center gap-24">
-      <div>
-        <h2 class="max-w-[40rem] text-[42px]">
-          お二人の「やりたい」を <br />
-          全て叶えるスタジオ
-        </h2>
-        <p class="max-w-[45rem] text-[24px]">
-          1万本の花が演出するロマンティックな雰囲気を再現した洋装スタジオから、日本の美を凝縮した和装スタジオ、時にはスタジオを飛び出してロケーション撮影まで。お二人のやりたいを叶えた特別な瞬間を写真に収めます。
-        </p>
-      </div>
-      <img
-        class="max-w-[864px] rounded-l-[75px] overflow-hidden"
-        src="/hero.jpg"
-        alt="A wedding picture"
-      />
-    </div>
-  </div>
+	<!-- Hero section 2 -->
+	<div class="min-h-screen flex items-center justify-end w-full py-[172px]">
+		<div class="flex items-center gap-24">
+			<div>
+				<h2 class="max-w-[40rem] text-[42px]">
+					お二人の「やりたい」を <br />
+					全て叶えるスタジオ
+				</h2>
+				<p class="max-w-[45rem] text-[24px]">
+					1万本の花が演出するロマンティックな雰囲気を再現した洋装スタジオから、日本の美を凝縮した和装スタジオ、時にはスタジオを飛び出してロケーション撮影まで。お二人のやりたいを叶えた特別な瞬間を写真に収めます。
+				</p>
+			</div>
+			<img
+				class="max-w-[864px] rounded-l-[75px] overflow-hidden"
+				src="/hero.jpg"
+				alt="A wedding picture"
+			/>
+		</div>
+	</div>
 
-  <!-- Gallery section -->
-  <div class="py-[184px] min-h-screen flex flex-col bg-peach rounded-t-[200px]">
-    <div class="page-container self-center">
-      <div class="flex flex-col items-center ml-auto w-full max-w-max">
-        <h2 class="text-[93px] font-semibold">GALLERY</h2>
-        <div class="flex items-center w-full gap-4">
-          <span class="h-1 w-full bg-black"></span>
-          <p class="text-[35px] shrink-0">ギャラリー</p>
-        </div>
-      </div>
-    </div>
-    <div class="my-6 flex flex-col">
-      <span class="text-[83px] text-white font-medium leading-none">Dress</span>
-      <div class="grid grid-cols-6">
-        {
-          [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((_) => {
-            return (
-              <img
-                class="w-full h-auto aspect-square object-cover"
-                src="/hero.jpg"
-                alt="A wedding picture"
-              />
-            );
-          })
-        }
-      </div>
-      <span class="text-[83px] text-white font-medium leading-none ml-auto"
-        >Kimono</span
-      >
-    </div>
-    <div class="flex flex-col gap-8 self-center">
-      <div class="flex items-center gap-2">
-        <p class="text-lg shrink-0">もっと見る</p>
+	<!-- Gallery section -->
+	<div class="py-[184px] min-h-screen flex flex-col bg-peach rounded-t-[200px]">
+		<div class="page-container self-center">
+			<div class="flex flex-col items-center ml-auto w-full max-w-max">
+				<h2 class="text-[93px] font-semibold">GALLERY</h2>
+				<div class="flex items-center w-full gap-4">
+					<span class="h-1 w-full bg-black"></span>
+					<p class="text-[35px] shrink-0">ギャラリー</p>
+				</div>
+			</div>
+		</div>
+		<div class="my-6 flex flex-col">
+			<span class="text-[83px] text-white font-medium leading-none">Dress</span>
+			<div class="grid grid-cols-6">
+				{
+					[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((_) => {
+						return (
+							<img
+								class="w-full h-auto aspect-square object-cover"
+								src="/hero.jpg"
+								alt="A wedding picture"
+							/>
+						)
+					})
+				}
+			</div>
+			<span class="text-[83px] text-white font-medium leading-none ml-auto">Kimono</span>
+		</div>
+		<div class="flex flex-col gap-8 self-center">
+			<div class="flex items-center gap-2">
+				<p class="text-lg shrink-0">もっと見る</p>
 
-        <span class="h-1 w-full bg-black"></span>
-      </div>
-      <div class="text-base">IG Instagramをチェック</div>
-    </div>
-  </div>
+				<span class="h-1 w-full bg-black"></span>
+			</div>
+			<div class="text-base">IG Instagramをチェック</div>
+		</div>
+	</div>
 
-  <!-- Plan section -->
-  <div class="py-[180px] page-container mx-auto">
-    <div class="flex flex-col items-center max-w-max">
-      <h2 class="text-[93px] font-semibold">PLAN</h2>
-      <div class="flex items-center w-full gap-4">
-        <span class="h-1 w-full bg-black"></span>
-        <p class="text-[35px] shrink-0">プラン紹介</p>
-      </div>
-    </div>
+	<!-- Plan section -->
+	<div class="py-[180px] page-container mx-auto">
+		<div class="flex flex-col items-center max-w-max">
+			<h2 class="text-[93px] font-semibold">PLAN</h2>
+			<div class="flex items-center w-full gap-4">
+				<span class="h-1 w-full bg-black"></span>
+				<p class="text-[35px] shrink-0">プラン紹介</p>
+			</div>
+		</div>
 
-    <div class="mt-[72px]">
-      <div class="flex flex-col items-center gap-[50px]">
-        {
-          new Array(5)
-            .fill({
-              heading: "1万本の花で演出するロマンティックな洋風スタジオ",
-              title: "洋装スタジオフォト",
-              body: "ウェデイングドレスもカラードレスも選び放題。もちろん、衣装ランクアップや洋装小物ランクアップも追加料金なしで撮影可能です。貸出小物も多数取り揃えております。",
-              subItems: [
-                "データ120カット付で問い合わせる",
-                "3背景以上",
-                "撮影時間1時間半",
-              ],
-              price: "150,000",
-              ctaLink: "#",
-            })
-            .map((item) => {
-              return (
-                <PlanCard
-                  heading={item.heading}
-                  title={item.title}
-                  body={item.body}
-                  subItems={item.subItems}
-                  price={item.price}
-                  ctaLink={item.ctaLink}
-                />
-              );
-            })
-        }
-      </div>
-      <div class="flex flex-col gap-[14px] mt-[60px]">
-        <span>※各プラン土日祝：+20,000円</span>
-        <span>※撮影データはダウンロードリンクでお渡しいたします。</span>
-      </div>
-    </div>
-  </div>
+		<div class="mt-[72px]">
+			<div class="flex flex-col items-center gap-[50px]">
+				{
+					new Array(5)
+						.fill({
+							heading: '1万本の花で演出するロマンティックな洋風スタジオ',
+							title: '洋装スタジオフォト',
+							body: 'ウェデイングドレスもカラードレスも選び放題。もちろん、衣装ランクアップや洋装小物ランクアップも追加料金なしで撮影可能です。貸出小物も多数取り揃えております。',
+							subItems: ['データ120カット付で問い合わせる', '3背景以上', '撮影時間1時間半'],
+							price: '150,000',
+							ctaLink: '#'
+						})
+						.map((item) => {
+							return (
+								<PlanCard
+									heading={item.heading}
+									title={item.title}
+									body={item.body}
+									subItems={item.subItems}
+									price={item.price}
+									ctaLink={item.ctaLink}
+								/>
+							)
+						})
+				}
+			</div>
+			<div class="flex flex-col gap-[14px] mt-[60px]">
+				<span>※各プラン土日祝：+20,000円</span>
+				<span>※撮影データはダウンロードリンクでお渡しいたします。</span>
+			</div>
+		</div>
+	</div>
 
-  <!-- Column section -->
-  <div class="bg-peach pt-[184px] pb-[150px] flex flex-col">
-    <div class="page-container self-center">
-      <div class="flex flex-col items-center ml-auto w-full max-w-max">
-        <h2 class="text-[93px] font-semibold">COLUMN</h2>
-        <div class="flex items-center w-full gap-4">
-          <span class="h-1 w-full bg-black"></span>
-          <p class="text-[35px] shrink-0">スタッフコラム</p>
-        </div>
-      </div>
-    </div>
-    <div
-      class="mt-16 flex items-center self-center justify-between page-container"
-    >
-      {
-        new Array(3)
-          .fill({
-            title:
-              "タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。",
-            tags: ["衣装", "QA"],
-            date: "2024.10.01",
-          })
-          .map((item) => {
-            return (
-              <ColumnCard
-                title={item.title}
-                tags={item.tags}
-                date={item.date}
-              />
-            );
-          })
-      }
-    </div>
-  </div>
+	<!-- Column section -->
+	<div class="bg-peach pt-[184px] pb-[150px] flex flex-col">
+		<div class="page-container self-center">
+			<div class="flex flex-col items-center ml-auto w-full max-w-max">
+				<h2 class="text-[93px] font-semibold">COLUMN</h2>
+				<div class="flex items-center w-full gap-4">
+					<span class="h-1 w-full bg-black"></span>
+					<p class="text-[35px] shrink-0">スタッフコラム</p>
+				</div>
+			</div>
+		</div>
+		<div class="mt-16 flex items-center self-center justify-between page-container">
+			{
+				new Array(3)
+					.fill({
+						title:
+							'タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。',
+						tags: ['衣装', 'QA'],
+						date: '2024.10.01'
+					})
+					.map((item) => {
+						return <ColumnCard title={item.title} tags={item.tags} date={item.date} />
+					})
+			}
+		</div>
+	</div>
 
-  <!-- Flow section -->
-  <div class="py-[180px] w-full page-container mx-auto">
-    <div class="flex flex-col items-center max-w-max">
-      <h2 class="text-[93px] font-semibold">FLOW</h2>
-      <div class="flex items-center w-full gap-4">
-        <span class="h-1 w-full bg-black"></span>
-        <p class="text-[35px] shrink-0">撮影の流れ</p>
-      </div>
-    </div>
+	<!-- Flow section -->
+	<div class="py-[180px] w-full page-container mx-auto">
+		<div class="flex flex-col items-center max-w-max">
+			<h2 class="text-[93px] font-semibold">FLOW</h2>
+			<div class="flex items-center w-full gap-4">
+				<span class="h-1 w-full bg-black"></span>
+				<p class="text-[35px] shrink-0">撮影の流れ</p>
+			</div>
+		</div>
 
-    <div class="flex flex-col mt-[100px] items-center">
-      {
-        new Array(5)
-          .fill({
-            title: "まずは当スタジオの全てが分かるLINEに登録！",
-            body: `当スタジオのLINE公式アカウントよりお友達登録をお願いします。スタジオのブースやおすすめロケ地が見られたり、料金プラン詳細やドレスの種類の確認など、LINE公式アカウントでしか見られない「当スタジオの全て」が盛り沢山です！`,
-          })
-          .map((item, idx) => {
-            const isLast = idx === 4;
-            return (
-              <>
-                <FlowStep
-                  step={`${idx + 1}`.padStart(2, "0")}
-                  title={item.title}
-                  body={item.body}
-                />
-                {!isLast ? (
-                  <div class="w-2 h-2 bg-black mt-[39px] mb-[30px]" />
-                ) : null}
-              </>
-            );
-          })
-      }
-    </div>
-  </div>
+		<div class="flex flex-col mt-[100px] items-center">
+			{
+				new Array(5)
+					.fill({
+						title: 'まずは当スタジオの全てが分かるLINEに登録！',
+						body: `当スタジオのLINE公式アカウントよりお友達登録をお願いします。スタジオのブースやおすすめロケ地が見られたり、料金プラン詳細やドレスの種類の確認など、LINE公式アカウントでしか見られない「当スタジオの全て」が盛り沢山です！`
+					})
+					.map((item, idx) => {
+						const isLast = idx === 4
+						return (
+							<>
+								<FlowStep
+									step={`${idx + 1}`.padStart(2, '0')}
+									title={item.title}
+									body={item.body}
+								/>
+								{!isLast ? <div class="w-2 h-2 bg-black mt-[39px] mb-[30px]" /> : null}
+							</>
+						)
+					})
+			}
+		</div>
+	</div>
 
-  <!-- Voice section -->
-  <div class="bg-peach pt-[184px] pb-[150px] flex flex-col">
-    <div class="mx-auto page-container flex flex-col">
-      <div class="flex items-end justify-between w-full">
-        <div class="flex items-center gap-[10px]">
-          <button
-            class="h-auto w-[60px] aspect-square bg-black rounded-full text-white"
-            >P</button
-          >
-          <button
-            class="h-auto w-[60px] aspect-square bg-black rounded-full text-white"
-            >N</button
-          >
-        </div>
-        <div class="flex flex-col items-center self-end">
-          <h2 class="text-[93px] font-semibold">VOICE</h2>
-          <div class="flex items-center w-full gap-4">
-            <span class="h-1 w-full bg-black"></span>
-            <p class="text-[35px] shrink-0">お客様の声</p>
-          </div>
-        </div>
-      </div>
-      <div class="mt-[26px] flex items-start gap-5 overflow-hidden">
-        {
-          new Array(10)
-            .fill({
-              body: "スタジオ撮影は堅苦しいイメージが多かったのですが、このフォトスタジオでは背景も沢山あってスタッフの方々のおかげで終始笑顔で楽しく撮ることができました！ドレスも豊富にあり、メイクも想像以上に可愛く仕上げて下さいました！",
-              author: "洋装スタジオプラン",
-            })
-            .map((item) => {
-              return <VoiceCard body={item.body} author={item.author} />;
-            })
-        }
-      </div>
-    </div>
-  </div>
+	<!-- Voice section -->
+	<div class="bg-peach pt-[184px] pb-[150px] flex flex-col">
+		<div class="mx-auto page-container flex flex-col">
+			<div class="flex items-end justify-between w-full">
+				<div class="flex items-center gap-[10px]">
+					<button class="h-auto w-[60px] aspect-square bg-black rounded-full text-white">P</button>
+					<button class="h-auto w-[60px] aspect-square bg-black rounded-full text-white">N</button>
+				</div>
+				<div class="flex flex-col items-center self-end">
+					<h2 class="text-[93px] font-semibold">VOICE</h2>
+					<div class="flex items-center w-full gap-4">
+						<span class="h-1 w-full bg-black"></span>
+						<p class="text-[35px] shrink-0">お客様の声</p>
+					</div>
+				</div>
+			</div>
+			<div class="mt-[26px] flex items-start gap-5 overflow-hidden">
+				{
+					new Array(10)
+						.fill({
+							body: 'スタジオ撮影は堅苦しいイメージが多かったのですが、このフォトスタジオでは背景も沢山あってスタッフの方々のおかげで終始笑顔で楽しく撮ることができました！ドレスも豊富にあり、メイクも想像以上に可愛く仕上げて下さいました！',
+							author: '洋装スタジオプラン'
+						})
+						.map((item) => {
+							return <VoiceCard body={item.body} author={item.author} />
+						})
+				}
+			</div>
+		</div>
+	</div>
 
-  <!-- FAQ section -->
-  <div class="py-[180px] page-container mx-auto">
-    <div class="flex flex-col items-start max-w-[326px]">
-      <h2 class="text-[93px] font-semibold">FAQ</h2>
-      <div class="flex items-center w-full gap-4">
-        <span class="h-1 w-full bg-black"></span>
-        <p class="text-[35px] shrink-0">よくある質問</p>
-      </div>
-    </div>
-  </div>
+	<!-- FAQ section -->
+	<div class="py-[180px] page-container mx-auto">
+		<div class="flex flex-col items-start max-w-[326px]">
+			<h2 class="text-[93px] font-semibold">FAQ</h2>
+			<div class="flex items-center w-full gap-4">
+				<span class="h-1 w-full bg-black"></span>
+				<p class="text-[35px] shrink-0">よくある質問</p>
+			</div>
+		</div>
+	</div>
 </Layout>
 <style>
-  .page-container {
-    width: 100%;
-  }
-  @media (min-width: 640px) {
-    .page-container {
-      max-width: 640px;
-    }
-  }
-  @media (min-width: 768px) {
-    .page-container {
-      max-width: 768px;
-    }
-  }
-  @media (min-width: 1024px) {
-    .page-container {
-      max-width: 1024px;
-    }
-  }
-  @media (min-width: 1280px) {
-    .page-container {
-      max-width: 1200px;
-    }
-  }
+	.page-container {
+		width: 100%;
+	}
+	@media (min-width: 640px) {
+		.page-container {
+			max-width: 640px;
+		}
+	}
+	@media (min-width: 768px) {
+		.page-container {
+			max-width: 768px;
+		}
+	}
+	@media (min-width: 1024px) {
+		.page-container {
+			max-width: 1024px;
+		}
+	}
+	@media (min-width: 1280px) {
+		.page-container {
+			max-width: 1200px;
+		}
+	}
 </style>
