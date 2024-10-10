@@ -15,67 +15,103 @@ import { Icon } from 'astro-icon/components'
 
 <Layout title="Welcome to Astro.">
 	<!-- Hero section 1 -->
-	<div class="w-full">
-		<div class="relative w-full bg-peach pb-[106px]">
-			<div class="min-h-screen flex items-center w-full relative">
-				<div class="flex flex-col gap-8 z-10 relative ml-[100px]">
-					<div class="bg-white text-[54px] max-w-max leading-[64px]">8000本の花で彩る</div>
-					<div class="bg-white text-[54px] ml-12 max-w-max leading-[64px]">
-						結婚の誓いを一枚の写真に
-					</div>
-				</div>
-				<img
-					class="absolute top-0 h-full object-cover object-top rounded-bl-[200px] aspect-[19/10] right-0 overflow-hidden"
-					src="/hero.jpg"
-					alt="A wedding picture"
-				/>
-			</div>
-		</div>
-	</div>
 
-	<!-- Hero section 2 -->
-	<div class="min-h-screen flex items-center justify-end w-full py-[172px]">
-		<div class="flex items-center gap-24">
-			<div class="flex flex-col">
-				<h2 class="max-w-[40rem] text-[42px] leading-[71px]">
-					お二人の「やりたい」を <br />
-					全て叶えるスタジオ
-				</h2>
-				<p class="max-w-[45rem] text-[24px] leading-[37px] mt-[71px]">
-					1万本の花が演出するロマンティックな雰囲気を再現した洋装スタジオから、日本の美を凝縮した和装スタジオ、時にはスタジオを飛び出してロケーション撮影まで。お二人のやりたいを叶えた特別な瞬間を写真に収めます。
-				</p>
-				<div class="flex items-center ml-auto mt-[61px] gap-2 w-full max-w-[192px]">
-					<span class="shrink-0">詳しく知る</span>
-					<span class="h-1 w-full bg-black"></span>
+	<div class="relative max-h-[630px] w-full bg-peach md:max-h-[unset] md:pb-[106px]">
+		<div class="relative flex min-h-screen w-full items-center">
+			<div
+				class="relative top-24 z-10 ml-[100px] flex flex-col gap-8 text-[25px] tracking-[0.4rem] md:top-0 md:text-[54px]"
+			>
+				<div class="max-w-max bg-white leading-[30px] md:leading-[64px]">8000本の花で彩る</div>
+				<div class="ml-12 max-w-max bg-white leading-[30px] md:leading-[64px]">
+					結婚の誓いを一枚の写真に
 				</div>
 			</div>
 			<img
-				class="max-w-[864px] rounded-l-[75px] overflow-hidden"
-				src="/hero-2.jpg"
+				class="absolute right-0 top-0 aspect-[75/100] max-h-[630px] w-full overflow-hidden rounded-bl-[50px] object-cover object-top md:aspect-[19/10] md:h-full md:max-h-[unset] md:w-auto md:rounded-bl-[200px]"
+				src="/hero.jpg"
 				alt="A wedding picture"
 			/>
 		</div>
 	</div>
 
-	<!-- Gallery section -->
-	<div class="py-[184px] min-h-screen flex flex-col bg-peach rounded-t-[200px]">
-		<div class="page-container self-center">
-			<div class="flex flex-col items-center ml-auto w-full max-w-max">
-				<h2 class="text-[93px] font-semibold">GALLERY</h2>
-				<div class="flex items-center w-full gap-4">
+	<!-- Hero section 2 -->
+	<div
+		class="flex min-h-screen w-full items-center justify-end pb-[100px] pt-[116px] xl:pb-[172px] xl:pt-[172px]"
+	>
+		<div class="flex w-full flex-col items-center xl:w-auto xl:flex-row xl:gap-24">
+			<div
+				class="flex w-full max-w-max flex-col items-center self-start pl-[10px] md:pl-0 xl:hidden"
+			>
+				<h2 class="text-[70px] font-semibold leading-[84px] md:text-[93px]">STUDIO</h2>
+				<div class="flex w-full items-center gap-4">
 					<span class="h-1 w-full bg-black"></span>
-					<p class="text-[35px] shrink-0">ギャラリー</p>
+					<p class="shrink-0 text-[35px]">スタジオ紹介</p>
+				</div>
+			</div>
+			<div class="hidden flex-col xl:flex">
+				<h2 class="max-w-[40rem] text-[42px] leading-[71px]">
+					お二人の「やりたい」を <br />
+					全て叶えるスタジオ
+				</h2>
+				<p class="mt-[71px] max-w-[45rem] text-[24px] leading-[37px]">
+					1万本の花が演出するロマンティックな雰囲気を再現した洋装スタジオから、日本の美を凝縮した和装スタジオ、時にはスタジオを飛び出してロケーション撮影まで。お二人のやりたいを叶えた特別な瞬間を写真に収めます。
+				</p>
+				<div class="ml-auto mt-[61px] flex w-full max-w-[192px] items-center gap-2">
+					<span class="shrink-0">詳しく知る</span>
+					<span class="h-1 w-full bg-black"></span>
+				</div>
+			</div>
+			<img
+				class="mt-12 min-h-[332px] max-w-[90%] self-end overflow-hidden rounded-l-[75px] object-cover xl:mt-0 xl:max-w-[864px]"
+				src="/hero-2.jpg"
+				alt="A wedding picture"
+			/>
+			<div class="mt-8 flex flex-col gap-10 px-7 xl:hidden">
+				<p class="text-xl leading-[24px] md:text-2xl">
+					テキストが入ります。テキストが 入ります。テキストが入ります。 テキストが入ります。
+				</p>
+				<p class="text-sm leading-[16px] md:text-base">
+					テキストが入ります。テキストが入ります。テキスト
+					が入ります。テキストが入ります。テキストが入りま
+					す。テキストが入ります。テキストが入ります。テキ
+					ストが入ります。テキストが入ります。テキストが入
+					ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキスト
+					が入ります。テキストが入ります。テキストが入りま
+					す。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキスト
+					が入ります。テキストが入ります。
+				</p>
+				<div class="mx-auto flex items-center gap-2">
+					<p class="shrink-0 text-lg">詳しく知る</p>
+
+					<span class="h-1 w-[90px] bg-black"></span>
 				</div>
 			</div>
 		</div>
-		<div class="my-6 flex flex-col">
-			<span class="text-[83px] text-white font-medium leading-none">Dress</span>
-			<div class="grid grid-cols-6">
+	</div>
+
+	<!-- Gallery section -->
+	<div
+		class="flex min-h-screen flex-col rounded-t-[50px] bg-peach py-[120px] md:rounded-t-[200px] md:py-[184px]"
+	>
+		<div class="page-container self-center">
+			<div class="ml-auto flex w-full max-w-max flex-col items-center pr-[10px] md:pr-0">
+				<h2 class="text-[70px] font-semibold leading-[84px] md:text-[93px]">GALLERY</h2>
+				<div class="flex w-full items-center gap-4">
+					<span class="h-1 w-full bg-black"></span>
+					<p class="shrink-0 text-[20px] md:text-[35px]">ギャラリー</p>
+				</div>
+			</div>
+		</div>
+		<div class="my-[76px] flex flex-col md:my-6">
+			<span class="hidden text-[83px] font-medium leading-none text-white md:inline-block"
+				>Dress</span
+			>
+			<div class="grid grid-cols-2 md:grid-cols-6">
 				{
 					[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((_) => {
 						return (
 							<img
-								class="w-full h-auto aspect-square object-cover"
+								class="aspect-square h-auto w-full object-cover"
 								src="/hero.jpg"
 								alt="A wedding picture"
 							/>
@@ -83,33 +119,35 @@ import { Icon } from 'astro-icon/components'
 					})
 				}
 			</div>
-			<span class="text-[83px] text-white font-medium leading-none ml-auto">Kimono</span>
+			<span class="ml-auto hidden text-[83px] font-medium leading-none text-white md:inline-block"
+				>Kimono</span
+			>
 		</div>
 		<div class="flex flex-col gap-8 self-center">
 			<div class="flex items-center gap-2">
-				<p class="text-lg shrink-0">もっと見る</p>
+				<p class="shrink-0 text-lg">もっと見る</p>
 
 				<span class="h-1 w-full bg-black"></span>
 			</div>
-			<div class="text-base flex items-end gap-3">
-				<Icon class="w-[30px] h-auto aspect-square" name={'instagram'} />
+			<div class="flex items-end gap-3 text-base">
+				<Icon class="aspect-square h-auto w-[30px]" name={'instagram'} />
 				Instagramをチェック
 			</div>
 		</div>
 	</div>
 
 	<!-- Plan section -->
-	<div class="py-[180px] page-container mx-auto">
-		<div class="flex flex-col items-center max-w-max">
-			<h2 class="text-[93px] font-semibold">PLAN</h2>
-			<div class="flex items-center w-full gap-4">
+	<div class="page-container mx-auto py-[125px] md:py-[180px]">
+		<div class="flex max-w-max flex-col items-center pl-[10px] md:pl-0">
+			<h2 class="text-[70px] font-semibold leading-[84px] md:text-[93px]">PLAN</h2>
+			<div class="flex w-full items-center gap-4">
 				<span class="h-1 w-full bg-black"></span>
-				<p class="text-[35px] shrink-0">プラン紹介</p>
+				<p class="shrink-0 text-[20px] md:text-[35px]">プラン紹介</p>
 			</div>
 		</div>
 
 		<div class="mt-[72px]">
-			<div class="flex flex-col items-center gap-[50px]">
+			<div class="flex flex-col items-center gap-[70px] md:gap-[50px]">
 				{
 					new Array(5)
 						.fill({
@@ -134,7 +172,7 @@ import { Icon } from 'astro-icon/components'
 						})
 				}
 			</div>
-			<div class="flex flex-col gap-[14px] mt-[60px]">
+			<div class="mt-[60px] flex flex-col gap-[14px]">
 				<span>※各プラン土日祝：+20,000円</span>
 				<span>※撮影データはダウンロードリンクでお渡しいたします。</span>
 			</div>
@@ -142,17 +180,17 @@ import { Icon } from 'astro-icon/components'
 	</div>
 
 	<!-- Column section -->
-	<div class="bg-peach pt-[184px] pb-[150px] flex flex-col">
+	<div class="flex flex-col bg-peach pb-[150px] pt-[145px] md:pt-[184px]">
 		<div class="page-container self-center">
-			<div class="flex flex-col items-center ml-auto w-full max-w-max">
-				<h2 class="text-[93px] font-semibold">COLUMN</h2>
-				<div class="flex items-center w-full gap-4">
+			<div class="ml-auto flex w-full max-w-max flex-col items-center pr-[10px] md:pr-0">
+				<h2 class="text-[70px] font-semibold leading-[84px] md:text-[93px]">COLUMN</h2>
+				<div class="flex w-full items-center gap-4">
 					<span class="h-1 w-full bg-black"></span>
-					<p class="text-[35px] shrink-0">スタッフコラム</p>
+					<p class="shrink-0 text-[20px] md:text-[35px]">スタッフコラム</p>
 				</div>
 			</div>
 		</div>
-		<div class="mt-16 flex items-center self-center justify-between page-container">
+		<div class="mt-16 flex flex-col items-center gap-[70px] self-center px-5 md:flex-row">
 			{
 				new Array(3)
 					.fill({
@@ -169,16 +207,16 @@ import { Icon } from 'astro-icon/components'
 	</div>
 
 	<!-- Flow section -->
-	<div class="py-[180px] w-full page-container mx-auto">
-		<div class="flex flex-col items-center max-w-max">
-			<h2 class="text-[93px] font-semibold">FLOW</h2>
-			<div class="flex items-center w-full gap-4">
+	<div class="page-container mx-auto w-full pb-[105px] pt-[148px] md:pt-[180px]">
+		<div class="flex max-w-max flex-col items-center pl-[10px] md:pl-0">
+			<h2 class="text-[70px] font-semibold leading-[84px] md:text-[93px]">FLOW</h2>
+			<div class="flex w-full items-center gap-4">
 				<span class="h-1 w-full bg-black"></span>
-				<p class="text-[35px] shrink-0">撮影の流れ</p>
+				<p class="shrink-0 text-[20px] md:text-[35px]">撮影の流れ</p>
 			</div>
 		</div>
 
-		<div class="flex flex-col mt-[100px] items-center">
+		<div class="mt-[100px] flex w-full flex-col items-center px-8">
 			{
 				new Array(5)
 					.fill({
@@ -196,7 +234,7 @@ import { Icon } from 'astro-icon/components'
 									body={item.body}
 									image={item.image}
 								/>
-								{!isLast ? <Icon name="down-arrow" class="w-2 h-2 mt-[39px] mb-[30px]" /> : null}
+								{!isLast ? <Icon name="down-arrow" class="mb-[30px] mt-[39px] h-5 w-5" /> : null}
 							</>
 						)
 					})
@@ -205,22 +243,32 @@ import { Icon } from 'astro-icon/components'
 	</div>
 
 	<!-- Voice section -->
-	<div class="bg-peach pt-[184px] pb-[150px] flex flex-col">
-		<div class="mx-auto page-container flex flex-col">
-			<div class="flex items-end justify-between w-full">
+	<div class="flex flex-col bg-peach pb-[150px] pt-[184px]">
+		<div class="page-container mx-auto flex flex-col">
+			<div
+				class="flex w-full flex-col-reverse items-end justify-between gap-[74px] pr-[10px] md:flex-row md:gap-0 md:pr-0"
+			>
 				<div class="flex items-center gap-[10px]">
-					<button class="h-auto w-[60px] aspect-square bg-black rounded-full text-white">P</button>
-					<button class="h-auto w-[60px] aspect-square bg-black rounded-full text-white">N</button>
+					<button
+						class="inline-flex aspect-square h-auto w-[60px] items-center justify-center rounded-full bg-black text-white"
+					>
+						<Icon class="rotate-180" name="play" />
+					</button>
+					<button
+						class="inline-flex aspect-square h-auto w-[60px] items-center justify-center rounded-full bg-black text-white"
+					>
+						<Icon name="play" />
+					</button>
 				</div>
 				<div class="flex flex-col items-center self-end">
-					<h2 class="text-[93px] font-semibold">VOICE</h2>
-					<div class="flex items-center w-full gap-4">
+					<h2 class="text-[70px] font-semibold leading-[84px] md:text-[93px]">VOICE</h2>
+					<div class="flex w-full items-center gap-4">
 						<span class="h-1 w-full bg-black"></span>
-						<p class="text-[35px] shrink-0">お客様の声</p>
+						<p class="shrink-0 text-[20px] md:text-[35px]">お客様の声</p>
 					</div>
 				</div>
 			</div>
-			<div class="mt-[26px] flex items-start gap-5 overflow-hidden">
+			<div class="mt-[26px] flex items-start gap-5 overflow-hidden px-5">
 				{
 					new Array(10)
 						.fill({
@@ -236,12 +284,12 @@ import { Icon } from 'astro-icon/components'
 	</div>
 
 	<!-- FAQ section -->
-	<div class="py-[180px] page-container mx-auto">
-		<div class="flex flex-col items-start max-w-[326px]">
-			<h2 class="text-[93px] font-semibold">FAQ</h2>
-			<div class="flex items-center w-full gap-4">
+	<div class="page-container mx-auto py-[126px] md:py-[180px]">
+		<div class="flex max-w-[326px] flex-col items-start pl-[10px] md:pl-0">
+			<h2 class="text-[70px] font-semibold leading-[84px] md:text-[93px]">FAQ</h2>
+			<div class="flex w-full items-center gap-4">
 				<span class="h-1 w-full bg-black"></span>
-				<p class="text-[35px] shrink-0">よくある質問</p>
+				<p class="shrink-0 text-[20px] md:text-[35px]">よくある質問</p>
 			</div>
 		</div>
 	</div>

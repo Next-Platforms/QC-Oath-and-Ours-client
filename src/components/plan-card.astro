@@ -11,19 +11,21 @@ export interface Props {
 const { heading, title, body, subItems, price, ctaLink } = Astro.props
 ---
 
-<div class="w-full flex shadow-lg rounded-xl overflow-hidden even:flex-row-reverse">
-	<img src="./hero.jpg" class="w-full object-cover" />
-	<div class="w-full flex flex-col items-center text-center px-10 py-10">
-		<div class="text-base">{heading}</div>
-		<b class="mt-[20px] text-[35px]">{title}</b>
-		<p class="text-base max-w-[420px] mt-6 text-justify leading-[33px]">
+<div
+	class="flex w-full flex-col overflow-hidden rounded-xl shadow-lg md:flex-row md:even:flex-row-reverse"
+>
+	<img src="./hero.jpg" class="aspect-[107/100] w-full object-cover md:aspect-[unset]" />
+	<div class="flex w-full flex-col items-center px-10 py-10 text-center">
+		<div class="rounded-md bg-peach text-sm md:text-base">{heading}</div>
+		<b class="mt-4 text-[25px] md:mt-5 md:text-[35px]">{title}</b>
+		<p class="mt-6 max-w-[420px] text-justify text-sm leading-[33px] md:text-base">
 			{body}
 		</p>
-		<div class="mt-[27px] flex items-center gap-3">
+		<div class="mt-[27px] flex flex-wrap items-center gap-3">
 			{
 				subItems.map((item) => {
 					return (
-						<button class="text-center text-nowrap text-base h-8 border-2 rounded px-2 border-black max-w-[160px] overflow-hidden">
+						<button class="h-7 max-w-[160px] overflow-hidden text-nowrap rounded border-2 border-black px-2 text-center text-sm md:h-8 md:text-base">
 							{item}
 						</button>
 					)
@@ -37,7 +39,7 @@ const { heading, title, body, subItems, price, ctaLink } = Astro.props
 		</div>
 		<a
 			href={ctaLink}
-			class="mt-4 px-8 h-[46px] text-nowrap bg-lime rounded-md text-white inline-flex items-center justify-center"
+			class="mt-4 inline-flex h-[46px] items-center justify-center text-nowrap rounded-md bg-lime px-8 text-white"
 			><span class="font-semibold">LINE</span>{' '}<span>で問い合わせる</span></a
 		>
 	</div>

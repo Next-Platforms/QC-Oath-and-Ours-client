@@ -8,27 +8,27 @@ export interface Props {
 const { tags, title, date } = Astro.props
 ---
 
-<div class="flex flex-col w-[360px] bg-white rounded-t-xl overflow-hidden shadow-lg">
-	<img class="w-full object-cover h-[186px]" src="/hero.jpg" />
-	<div class="pt-5 pb-[26px] px-5">
-		<div class="w-full flex items-center justify-between">
+<div class="flex w-full flex-col overflow-hidden rounded-t-xl bg-white shadow-lg md:max-w-[360px]">
+	<img class="h-[186px] w-full object-cover" src="/hero.jpg" />
+	<div class="px-5 pb-[26px] pt-5">
+		<div class="flex w-full items-center justify-between">
 			<div class="flex items-center gap-[5px]">
 				{
 					tags[0] ? (
-						<span class="text-sm px-[10px] py-[5px] rounded-md text-white bg-black">{tags[0]}</span>
+						<span class="rounded-md bg-black px-[10px] py-[5px] text-sm text-white">{tags[0]}</span>
 					) : null
 				}
 				{
 					tags[1] ? (
-						<span class="text-sm px-[10px] py-[5px] rounded-md text-white bg-[#BB9C52]">
+						<span class="rounded-md bg-[#BB9C52] px-[10px] py-[5px] text-sm text-white">
 							{tags[1]}
 						</span>
 					) : null
 				}
 			</div>
-			<span>{date}</span>
+			<span class="text-sm">{date}</span>
 		</div>
-		<p class="leading-[27px] mt-4">
+		<p class="mt-4 leading-[27px]">
 			{title}
 		</p>
 	</div>

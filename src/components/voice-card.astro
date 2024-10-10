@@ -7,12 +7,12 @@ export interface Props {
 const { author, body } = Astro.props
 ---
 
-<div class="p-[26px] bg-white rounded-xl w-full max-w-[400px] flex flex-col shrink-0">
-	<img class="w-full h-[240px]" src="/hero.jpg" />
-	<p class="text-base leading-[33px]">
+<div class="flex w-full max-w-[400px] shrink-0 flex-col rounded-xl bg-white p-5">
+	<img class="h-[240px] w-full" src="/hero.jpg" />
+	<p class="mt-[26px] text-base leading-[33px] md:mt-7">
 		{body}
 	</p>
-	<span class="text-base mt-[26px] inline-block ml-auto max-w-max"
+	<span class="ml-auto mt-[26px] inline-block max-w-max text-base"
 		>洋装スタジオプラン
 		{author}
 	</span>

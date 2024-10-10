@@ -19,10 +19,15 @@ const { title } = Astro.props
 		<title>{title}</title>
 	</head>
 	<body>
-		<header class="w-full flex items-center justify-center h-20">
-			<nav class="flex items-center justify-evenly w-full">
+		<header class="flex h-20 w-full items-center justify-center">
+			<div class="flex w-full items-center justify-between px-5 lg:hidden">
+				<span class="bg-[#757575] px-[52px] py-5 text-xs leading-[14px] text-white">ロゴ</span>
+				<Icon name="hamburger" />
+			</div>
+
+			<div class="hidden w-full items-center justify-evenly lg:flex">
 				<div class="flex items-center gap-4">
-					<Icon class="w-[192px] h-auto aspect-[100/24]" name="logo" />
+					<Icon class="aspect-[100/24] h-auto w-[192px]" name="logo" />
 				</div>
 				<div class="flex items-center gap-4">
 					<div>
@@ -42,7 +47,7 @@ const { title } = Astro.props
 						<span>STUDIO</span>
 					</div>
 				</div>
-			</nav>
+			</div>
 		</header>
 		<main>
 			<slot />
