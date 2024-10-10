@@ -3,8 +3,7 @@
 import * as React from 'react'
 import * as AccordionPrimitive from '@radix-ui/react-accordion'
 
-import { cn } from '../lib/utils'
-import Search from '../icons/search.svg?react'
+import { cn } from '../../lib/utils'
 
 const Accordion = AccordionPrimitive.Root
 
@@ -31,7 +30,7 @@ const AccordionTrigger = React.forwardRef<
 			{...props}
 		>
 			<div className="absolute inset-0 flex h-[50px] w-[60px] items-center justify-center rounded-br-2xl rounded-tl-2xl bg-black text-base leading-[19px] text-white md:text-lg md:leading-[21px]">
-				<Search className="h-7 w-5" />
+				<img src="/search.svg" className="h-7 w-5" />
 			</div>
 			<div className="ml-[60px] flex items-center gap-4 p-4">
 				{children}

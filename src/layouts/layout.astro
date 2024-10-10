@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components'
+import NavbarDrawer from '../components/navbar-drawer'
 
 interface Props {
 	title: string
@@ -22,7 +23,7 @@ const { title } = Astro.props
 		<header class="flex h-20 w-full items-center justify-center">
 			<div class="flex w-full items-center justify-between px-5 lg:hidden">
 				<span class="bg-[#757575] px-[52px] py-5 text-xs leading-[14px] text-white">ロゴ</span>
-				<Icon name="hamburger" />
+				<NavbarDrawer client:load />
 			</div>
 
 			<div class="hidden w-full items-center justify-evenly lg:flex">
