@@ -7,6 +7,7 @@ import FlowStep from '../components/flow-step.astro'
 import VoiceCard from '../components/voice-card.astro'
 
 import { Icon } from 'astro-icon/components'
+import FaqAccordions from '../components/faq-accordions'
 
 // const res = await fetch("http://wedding.test/wp-json/wp/v2/posts");
 // const posts = await res.json();
@@ -284,13 +285,22 @@ import { Icon } from 'astro-icon/components'
 	</div>
 
 	<!-- FAQ section -->
-	<div class="page-container mx-auto py-[126px] md:py-[180px]">
+	<div class="page-container mx-auto pb-[102px] pt-[126px] md:pb-[152px] md:pt-[180px]">
 		<div class="flex max-w-[326px] flex-col items-start pl-[10px] md:pl-0">
 			<h2 class="text-[70px] font-semibold leading-[84px] md:text-[93px]">FAQ</h2>
 			<div class="flex w-full items-center gap-4">
 				<span class="h-1 w-full bg-black"></span>
 				<p class="shrink-0 text-[20px] md:text-[35px]">よくある質問</p>
 			</div>
+		</div>
+		<div class="mt-[67px] px-5">
+			<FaqAccordions
+				client:load
+				items={new Array(5).fill({
+					content: 'ございます！ 和装も洋装も様々な小物ご用意ございますので、お使いくださいませ。',
+					title: '撮影予定日、雨天の場合は延期できますか？'
+				})}
+			/>
 		</div>
 	</div>
 </Layout>
