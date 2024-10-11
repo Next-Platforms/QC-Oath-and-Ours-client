@@ -1,10 +1,10 @@
 ---
-import FeatureCard from '../../components/feature-card.astro'
-import FeaturePriceCard from '../../components/feature-price-card.astro'
-import FeatureTableItem from '../../components/feature-table-item.astro'
-import MapInfoItem from '../../components/map-info-item.astro'
-import PlanCard from '../../components/plan-card.astro'
-import StudioCard from '../../components/studio-card.astro'
+import FeatureCard from '../../components/page-components/features/feature-card.astro'
+import FeaturePriceCard from '../../components/page-components/features/feature-price-card.astro'
+import FeatureTableItem from '../../components/page-components/features/feature-table-item.astro'
+import MapInfoItem from '../../components/page-components/features/map-info-item.astro'
+import StudioCard from '../../components/page-components/features/studio-card.astro'
+import PlanCard from '../../components/page-components/common/plan-card.astro'
 import Layout from '../../layouts/layout.astro'
 ---
 
@@ -54,6 +54,15 @@ import Layout from '../../layouts/layout.astro'
 				}
 			</div>
 
+			<div class="mt-[130px] md:mt-[182px]">
+				<div class="flex max-w-max flex-col items-center pl-[10px] md:pl-0">
+					<h2 class="text-[70px] font-semibold leading-[84px] md:text-[93px]">STUDIO</h2>
+					<div class="flex w-full items-center gap-4">
+						<span class="h-1 w-full bg-black"></span>
+						<p class="shrink-0 text-[20px] md:text-[35px]">アクセス</p>
+					</div>
+				</div>
+			</div>
 			<div class="mx-auto mt-[96px] grid grid-cols-1 gap-[70px] md:mt-[70px] md:grid-cols-3">
 				{
 					new Array(3)
@@ -157,7 +166,7 @@ import Layout from '../../layouts/layout.astro'
 				</div>
 
 				<div
-					class="mt-[96px] aspect-[78/100] w-full border md:mt-[100px] md:aspect-[25/10] md:max-w-[1200px]"
+					class="mt-[96px] aspect-[78/100] w-full overflow-hidden rounded-lg md:mt-[100px] md:aspect-[25/10] md:max-w-[1200px]"
 				>
 					<img class="h-full w-full object-cover" src="./map.png" />
 				</div>
