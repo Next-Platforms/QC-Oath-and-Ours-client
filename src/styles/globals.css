@@ -4,6 +4,6 @@
 @tailwind utilities;
 
 :root {
-  --peach: 27 27% 92%;
-  --lime: 145 94% 40%;
+	--peach: 27 27% 92%;
+	--lime: 145 94% 40%;
 }
