@@ -66,7 +66,7 @@ const hydrateGalleryItem = (
 
 export const GalleryCategoryApi = {
 	list: async () => {
-		if (process.env.NODE_ENV === 'development') {
+		if (process.env.NODE_ENV === 'production') {
 			return [
 				{ id: 0, name: 'Blah' },
 				{ id: 1, name: 'Cat1' },
@@ -92,7 +92,7 @@ export const GalleryItemsApi = {
 		skip?: number | string | undefined
 		gallery_category?: number | string | undefined
 	}): Promise<{ items: GalleryItem[]; total: number }> => {
-		if (process.env.NODE_ENV === 'development') {
+		if (process.env.NODE_ENV === 'production') {
 			return {
 				items: new Array(+take).fill({
 					id: 0,
