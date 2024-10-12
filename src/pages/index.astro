@@ -7,10 +7,6 @@ import VoiceCard from '../components/page-components/home/voice-card.astro'
 
 import { Icon } from 'astro-icon/components'
 import FaqAccordions from '../components/page-components/home/faq-accordions'
-
-// const res = await fetch("http://wedding.test/wp-json/wp/v2/posts");
-// const posts = await res.json();
-// console.log(posts);
 ---
 
 <Layout title="Oath and ours">
@@ -93,7 +89,7 @@ import FaqAccordions from '../components/page-components/home/faq-accordions'
 	<div
 		class="flex min-h-screen flex-col rounded-t-[50px] bg-peach py-[120px] md:rounded-t-[200px] md:py-[184px]"
 	>
-		<div class="page-container self-center">
+		<div class="self-center page-container">
 			<div class="ml-auto flex w-full max-w-max flex-col items-center pr-[10px] md:pr-0">
 				<h2 class="text-[70px] font-semibold leading-[84px] md:text-[93px]">GALLERY</h2>
 				<div class="flex w-full items-center gap-4">
@@ -137,7 +133,7 @@ import FaqAccordions from '../components/page-components/home/faq-accordions'
 	</div>
 
 	<!-- Plan section -->
-	<div class="page-container mx-auto py-[125px] md:py-[180px]">
+	<div class="mx-auto py-[125px] page-container md:py-[180px]">
 		<div class="flex max-w-max flex-col items-center pl-[10px] md:pl-0">
 			<h2 class="text-[70px] font-semibold leading-[84px] md:text-[93px]">PLAN</h2>
 			<div class="flex w-full items-center gap-4">
@@ -181,7 +177,7 @@ import FaqAccordions from '../components/page-components/home/faq-accordions'
 
 	<!-- Column section -->
 	<div class="flex flex-col bg-peach pb-[150px] pt-[145px] md:pt-[184px]">
-		<div class="page-container self-center">
+		<div class="self-center page-container">
 			<div class="ml-auto flex w-full max-w-max flex-col items-center pr-[10px] md:pr-0">
 				<h2 class="text-[70px] font-semibold leading-[84px] md:text-[93px]">COLUMN</h2>
 				<div class="flex w-full items-center gap-4">
@@ -200,14 +196,14 @@ import FaqAccordions from '../components/page-components/home/faq-accordions'
 						date: '2024.10.01'
 					})
 					.map((item) => {
-						return <ColumnCard title={item.title} tags={item.tags} date={item.date} />
+						return <ColumnCard title={item.title} tags={item.tags} date={item.date} slug={''} />
 					})
 			}
 		</div>
 	</div>
 
 	<!-- Flow section -->
-	<div class="page-container mx-auto w-full pb-[105px] pt-[148px] md:pt-[180px]">
+	<div class="mx-auto w-full pb-[105px] pt-[148px] page-container md:pt-[180px]">
 		<div class="flex max-w-max flex-col items-center pl-[10px] md:pl-0">
 			<h2 class="text-[70px] font-semibold leading-[84px] md:text-[93px]">FLOW</h2>
 			<div class="flex w-full items-center gap-4">
@@ -244,7 +240,7 @@ import FaqAccordions from '../components/page-components/home/faq-accordions'
 
 	<!-- Voice section -->
 	<div class="flex flex-col bg-peach pb-[150px] pt-[184px]">
-		<div class="page-container mx-auto flex flex-col">
+		<div class="mx-auto flex flex-col page-container">
 			<div
 				class="flex w-full flex-col-reverse items-end justify-between gap-[74px] pr-[10px] md:flex-row md:gap-0 md:pr-0"
 			>
@@ -284,7 +280,7 @@ import FaqAccordions from '../components/page-components/home/faq-accordions'
 	</div>
 
 	<!-- FAQ section -->
-	<div class="page-container mx-auto pb-[102px] pt-[126px] md:pb-[152px] md:pt-[180px]">
+	<div class="mx-auto pb-[102px] pt-[126px] page-container md:pb-[152px] md:pt-[180px]">
 		<div class="flex max-w-[326px] flex-col items-start pl-[10px] md:pl-0">
 			<h2 class="text-[70px] font-semibold leading-[84px] md:text-[93px]">FAQ</h2>
 			<div class="flex w-full items-center gap-4">

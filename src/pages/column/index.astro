@@ -1,0 +1,25 @@
+---
+import { PostsApi } from '../../lib/api'
+import ImageHeader from '../../components/page-components/common/image-header.astro'
+import ColumnCard from '../../components/page-components/home/column-card.astro'
+import Layout from '../../layouts/layout.astro'
+
+const posts = await PostsApi.list()
+
+const tags = ['衣装', 'QA']
+---
+
+<Layout title="Column">
+	<ImageHeader title="COLUMN" subtitle="コラム" image="./hero.jpg" />
+	<div class="mx-auto pb-[100px] pt-[100px] page-container md:pb-[100px] md:pt-[100px]">
+		<div class="flex flex-col items-center gap-[70px] self-center px-5 md:flex-row">
+			{
+				posts.map((post) => {
+					return (
+						<ColumnCard title={post.title.rendered} tags={tags} date={post.date} slug={post.slug} />
+					)
+				})
+			}
+		</div>
+	</div>
+</Layout>

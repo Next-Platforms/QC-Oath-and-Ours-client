@@ -7,6 +7,8 @@ import icon from 'astro-icon'
 import react from '@astrojs/react'
 import svgr from 'vite-plugin-svgr'
 
+import vercel from '@astrojs/vercel/serverless'
+
 // https://astro.build/config
 export default defineConfig({
 	integrations: [
@@ -16,7 +18,11 @@ export default defineConfig({
 		icon(),
 		react()
 	],
+
 	vite: {
 		plugins: [svgr()]
-	}
+	},
+
+	output: 'hybrid',
+	adapter: vercel()
 })
