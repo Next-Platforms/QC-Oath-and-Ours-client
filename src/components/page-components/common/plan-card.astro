@@ -12,20 +12,28 @@ const { heading, title, body, subItems, price, ctaLink } = Astro.props
 ---
 
 <div
-	class="flex w-full flex-col overflow-hidden rounded-xl shadow-lg md:flex-row md:even:flex-row-reverse"
+	class="flex w-full flex-col overflow-hidden rounded-[20px] shadow-lg md:flex-row md:even:flex-row-reverse"
 >
 	<img src="./hero.jpg" class="aspect-[107/100] w-full object-cover md:aspect-[unset]" />
 	<div class="flex w-full flex-col items-center px-10 py-10 text-center">
-		<div class="rounded-md bg-peach text-sm md:text-base">{heading}</div>
-		<b class="mt-4 text-[25px] md:mt-5 md:text-[35px]">{title}</b>
-		<p class="mt-6 max-w-[420px] text-justify text-sm leading-[33px] md:text-base">
+		<div
+			class="rounded-[5px] bg-peach p-[11px] text-sm font-bold leading-[16px] md:text-[19px] md:text-base"
+		>
+			{heading}
+		</div>
+		<b class="mt-4 text-[25px] font-bold leading-[30px] md:mt-5 md:text-[35px] md:leading-[42px]"
+			>{title}</b
+		>
+		<p
+			class="mt-6 max-w-[420px] text-justify text-sm font-medium leading-[16px] md:text-base md:leading-[33px]"
+		>
 			{body}
 		</p>
 		<div class="mt-[27px] flex flex-wrap items-center gap-3">
 			{
 				subItems.map((item) => {
 					return (
-						<button class="h-7 max-w-[160px] overflow-hidden text-nowrap rounded border-2 border-black px-2 text-center text-sm md:h-8 md:text-base">
+						<button class="h-7 max-w-[160px] overflow-hidden text-nowrap rounded-[4.5px] border-2 border-black px-2 text-center text-sm font-medium md:h-8 md:text-base">
 							{item}
 						</button>
 					)
@@ -33,14 +41,14 @@ const { heading, title, body, subItems, price, ctaLink } = Astro.props
 			}
 		</div>
 		<div class="mt-[26px] flex items-baseline gap-2">
-			<span class="text-base">¥</span>
-			<b class="text-4xl font-bold">{price}</b>
-			<p class="text-base">(税込)</p>
+			<span class="text-base font-medium">¥</span>
+			<b class="text-4xl font-medium">{price}</b>
+			<p class="text-base font-medium">(税込)</p>
 		</div>
 		<a
 			href={ctaLink}
-			class="mt-4 inline-flex h-[46px] items-center justify-center text-nowrap rounded-md bg-lime px-8 text-white"
-			><span class="font-semibold">LINE</span>{' '}<span>で問い合わせる</span></a
+			class="mt-4 inline-flex h-[46px] items-center justify-center text-nowrap rounded-[5px] bg-lime px-8 font-bold text-white"
+			><span>LINE</span><span>で問い合わせる</span></a
 		>
 	</div>
 </div>

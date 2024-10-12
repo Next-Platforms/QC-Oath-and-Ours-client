@@ -10,4 +10,9 @@ export type Post = {
 	excerpt: {
 		rendered: string
 	}
+	categories: { id: number; name: string }[]
+}
+
+export type UnhydratedPost = Omit<Post, 'categories'> & {
+	categories: number[]
 }

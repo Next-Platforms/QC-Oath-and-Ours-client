@@ -37,14 +37,7 @@ import Layout from '../../layouts/layout.astro'
 			</div>
 		</div>
 		<div class="mt-[100px] flex flex-col items-center gap-[50px]">
-			<PaginationControls
-				client:load
-				setPage={() => {}}
-				setPageSize={() => {}}
-				page={1}
-				pageSize={10}
-				total={100}
-			/>
+			<PaginationControls client:load page={1} pageSize={10} total={100} />
 			<div class="flex items-end gap-3 text-base">
 				<Icon class="aspect-square h-auto w-[30px]" name={'instagram'} />
 				Instagramをチェック

@@ -1,16 +1,19 @@
 ---
+import { formatDate } from '../../../lib/utils'
+import type { Post } from '../../../types/data'
+
 export interface Props {
-	title: string
-	tags: string[]
-	date: string
-	slug: string
+	post: Post
 }
 
-const { tags, title, date, slug } = Astro.props
+const { post } = Astro.props
+const { slug, categories } = post
+const title = post.title.rendered
+const date = formatDate(post.date)
 ---
 
 <a
-	class="flex w-full flex-col overflow-hidden rounded-t-xl bg-white shadow-lg md:max-w-[360px]"
+	class="flex w-full flex-col overflow-hidden rounded-t-[20px] bg-white shadow-lg md:max-w-[360px]"
 	href={slug ? `/column/${slug}` : '#'}
 >
 	<img class="h-[186px] w-full object-cover" src="/hero.jpg" />
@@ -18,21 +21,23 @@ const { tags, title, date, slug } = Astro.props
 		<div class="flex w-full items-center justify-between">
 			<div class="flex items-center gap-[5px]">
 				{
-					tags[0] ? (
-						<span class="rounded-md bg-black px-[10px] py-[5px] text-sm text-white">{tags[0]}</span>
+					categories[0] ? (
+						<span class="rounded-[5px] bg-black px-[10px] py-[5px] text-sm text-white">
+							{categories[0].name}
+						</span>
 					) : null
 				}
 				{
-					tags[1] ? (
+					categories[1] ? (
 						<span class="rounded-md bg-[#BB9C52] px-[10px] py-[5px] text-sm text-white">
-							{tags[1]}
+							{categories[1].name}
 						</span>
 					) : null
 				}
 			</div>
-			<span class="text-sm">{date}</span>
+			<span class="text-sm leading-[16px]">{date}</span>
 		</div>
-		<p class="mt-4 leading-[27px]">
+		<p class="mt-4 font-bold leading-[19px] md:leading-[27px]">
 			{title}
 		</p>
 	</div>

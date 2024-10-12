@@ -1,12 +1,24 @@
 ---
+export const prerender = false
+
 import { PostsApi } from '../../lib/api'
 import ImageHeader from '../../components/page-components/common/image-header.astro'
 import ColumnCard from '../../components/page-components/home/column-card.astro'
 import Layout from '../../layouts/layout.astro'
+import { PaginationControls } from '../../components/ui/pagination-controls'
+import { getSkip } from '../../lib/utils'
 
-const posts = await PostsApi.list()
+const { searchParams } = Astro.url
 
-const tags = ['衣装', 'QA']
+const page = Number(searchParams.get('page') ?? 1)
+
+const pageSize = 9
+const skip = getSkip(page, pageSize)
+
+const { posts, total } = await PostsApi.list({
+	skip,
+	take: pageSize
+})
 ---
 
 <Layout title="Column">
@@ -20,11 +32,12 @@ const tags = ['衣装', 'QA']
 		<div class="flex flex-col items-center gap-[70px] self-center px-5 md:flex-row">
 			{
 				posts.map((post) => {
-					return (
-						<ColumnCard title={post.title.rendered} tags={tags} date={post.date} slug={post.slug} />
-					)
+					return <ColumnCard post={post} />
 				})
 			}
+		</div>
+		<div class="mx-auto mt-[52px] max-w-max md:mt-[60px]">
+			<PaginationControls client:only="react" page={page} pageSize={pageSize} total={total} />
 		</div>
 	</div>
 </Layout>

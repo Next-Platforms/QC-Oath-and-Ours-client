@@ -19,8 +19,8 @@ const { step, title, body, image } = Astro.props
 	>
 		<img class="h-[280px] w-full max-w-[515px] rounded-lg object-cover" src={image} />
 		<div class="flex flex-col gap-[27px]">
-			<span class="text-[25px] leading-[30px] md:leading-[40px]">{title}</span>
-			<p class="text-base leading-[19px] md:leading-[33px]">
+			<span class="text-[25px] font-bold leading-[30px] md:leading-[40px]">{title}</span>
+			<p class="text-base font-medium leading-[19px] md:leading-[33px]">
 				{body}
 			</p>
 		</div>

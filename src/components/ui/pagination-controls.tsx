@@ -25,22 +25,61 @@ const PaginationControlButton = ({
 	)
 }
 
+function getPageNumbers(page: number, pageSize: number, total: number): number[] {
+	if (pageSize <= 0 || total <= 0) return []
+
+	// Calculate total pages
+	const totalPages = Math.ceil(total / pageSize)
+
+	// Ensure the current page is within valid bounds
+	const currentPage = Math.min(Math.max(1, page), totalPages)
+
+	// Initialize the first and last pages
+	let firstPage = 1
+	let lastPage = totalPages
+
+	// Calculate the range of pages based on currentPage
+	if (totalPages > 5) {
+		// If there are more than 5 pages, adjust the range to be centered around currentPage
+		firstPage = Math.max(1, currentPage - 2)
+		lastPage = Math.min(totalPages, currentPage + 2)
+
+		// Adjust firstPage if the range exceeds totalPages
+		if (lastPage - firstPage < 4) {
+			if (lastPage === totalPages) {
+				firstPage = Math.max(1, lastPage - 4)
+			} else {
+				lastPage = Math.min(totalPages, firstPage + 4)
+			}
+		}
+	}
+
+	// Generate the range of pages
+	const pages = []
+	for (let i = firstPage; i <= lastPage; i++) {
+		pages.push(i)
+	}
+
+	return pages
+}
+
 export const PaginationControls = ({
 	page,
 	pageSize,
-	setPage,
-	total
+	total = 0
 }: {
 	page: number
 	pageSize: number
 	total: number | undefined
-	setPage: (val: number) => void
-	setPageSize: (val: number) => void
 }) => {
 	const totalPages = useMemo(
 		() => (total ? Math.ceil(total / pageSize) : page),
 		[total, pageSize, page]
 	)
+
+	const setPage = (page: number) => {
+		window.location.href = `?${new URLSearchParams({ page: `${page}` }).toString()}`
+	}
 
 	return (
 		<div className="flex items-center gap-[11px]">
@@ -62,14 +101,19 @@ export const PaginationControls = ({
 						<path d="M5.71,10.35L.71,5.35,5.71.35" />
 					</g>
 				</svg>
+				<p className="sr-only">Go to the previous page</p>
 			</PaginationControlButton>
-			{new Array(Math.min(5, totalPages)).fill(0).map((_, idx) => {
-				const pageNumber = idx + page
+			{getPageNumbers(page, pageSize, total).map((pageNumber) => {
 				const isActive = pageNumber === page
 
 				return (
-					<PaginationControlButton active={isActive} onClick={() => setPage(pageNumber)}>
-						{pageNumber}
+					<PaginationControlButton
+						key={pageNumber}
+						active={isActive}
+						onClick={() => setPage(pageNumber)}
+					>
+						<span>{pageNumber}</span>
+						<p className="sr-only">Go to page {pageNumber}</p>
 					</PaginationControlButton>
 				)
 			})}
@@ -92,6 +136,7 @@ export const PaginationControls = ({
 						<path d="M5.71,10.35L.71,5.35,5.71.35" />
 					</g>
 				</svg>
+				<p className="sr-only">Go to the next page</p>
 			</PaginationControlButton>
 		</div>
 	)

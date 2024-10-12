@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { getSkip } from '../lib/utils'
 
 export type UsePaginationState = ReturnType<typeof usePagination>
 
@@ -11,7 +12,7 @@ export const usePagination = (initialPageSize = 10, initialPage = 1) => {
 		setPage(_page)
 	}
 
-	const skip = useMemo(() => (page <= 1 ? 0 : pageSize * (page - 1)), [page, pageSize])
+	const skip = useMemo(() => getSkip(page, pageSize), [page, pageSize])
 	const take = pageSize
 
 	return { page, setPage, pageSize, setPageSize, onChange, skip, take }
