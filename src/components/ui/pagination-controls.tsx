@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { cn } from '../../lib/utils'
+import { cn, updateSearchParams } from '../../lib/utils'
 
 const PaginationControlButton = ({
 	children,
@@ -14,7 +14,7 @@ const PaginationControlButton = ({
 		<button
 			type={type}
 			className={cn(
-				'inline-flex h-[35px] w-[35px] items-center justify-center rounded-full border-2 border-black text-black hover:bg-[#333333] hover:text-white focus-visible:bg-[#333333] focus-visible:text-white',
+				'english inline-flex h-[35px] w-[35px] items-center justify-center rounded-full border-2 border-black font-medium text-black hover:bg-[#333333] hover:text-white focus-visible:bg-[#333333] focus-visible:text-white',
 				active && 'bg-black text-white',
 				className
 			)}
@@ -26,7 +26,8 @@ const PaginationControlButton = ({
 }
 
 function getPageNumbers(page: number, pageSize: number, total: number): number[] {
-	if (pageSize <= 0 || total <= 0) return []
+	if (pageSize <= 0) return []
+	if (total <= 0) return [1]
 
 	// Calculate total pages
 	const totalPages = Math.ceil(total / pageSize)
@@ -66,7 +67,7 @@ function getPageNumbers(page: number, pageSize: number, total: number): number[]
 export const PaginationControls = ({
 	page,
 	pageSize,
-	total = 0
+	total = 1
 }: {
 	page: number
 	pageSize: number
@@ -78,7 +79,7 @@ export const PaginationControls = ({
 	)
 
 	const setPage = (page: number) => {
-		window.location.href = `?${new URLSearchParams({ page: `${page}` }).toString()}`
+		updateSearchParams({ page })
 	}
 
 	return (

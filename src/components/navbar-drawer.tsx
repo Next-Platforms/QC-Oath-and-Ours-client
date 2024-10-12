@@ -38,16 +38,18 @@ const NavbarDrawer = () => {
 								key={link.title}
 							>
 								<span className="text-base font-bold leading-[19px]">{link.title}</span>
-								<span className="text-base leading-[19px] text-[#D7D7D7]">{link.subtitle}</span>
+								<span className="english text-base leading-[19px] text-[#D7D7D7]">
+									{link.subtitle}
+								</span>
 							</a>
 						)
 					})}
 					<a
-						className="hover:bg-dark-lime focus-visible:dark-lime flex h-[80px] w-full items-center justify-center bg-lime px-6 text-center text-white"
+						className="focus-visible:dark-lime flex h-[80px] w-full items-center justify-center bg-lime px-6 text-center text-white hover:bg-dark-lime"
 						href="#"
 					>
 						<p className="text-base font-bold leading-[19px]">
-							<span className="text-[18px] leading-[21px]">LINE</span>で<br />
+							<span className="english text-[18px] leading-[21px]">LINE</span>で<br />
 							問い合わせる
 						</p>
 					</a>

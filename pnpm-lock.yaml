@@ -20,6 +20,12 @@ importers:
       '@astrojs/vercel':
         specifier: ^7.8.1
         version: 7.8.1(astro@4.15.12(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))(react@18.3.1)
+      '@fontsource/lato':
+        specifier: ^5.1.0
+        version: 5.1.0
+      '@fontsource/noto-serif-jp':
+        specifier: ^5.1.1
+        version: 5.1.1
       '@radix-ui/react-accordion':
         specifier: ^1.2.1
         version: 1.2.1(@types/react-dom@18.3.0)(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -408,6 +414,12 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource/lato@5.1.0':
+    resolution: {integrity: sha512-wYa/DeUS/WuaJoR/vY+v74W6gtOm98DgoRdSj4FuMXe0E0XYGAEVOgh+DxusJR3EglRZU6ZZDF7vZ881vV1KGA==}
+
+  '@fontsource/noto-serif-jp@5.1.1':
+    resolution: {integrity: sha512-PsHTa1mq6etZkx+MjkeAkKpJLZszhhg2jtI9jMG5U3E1GfnnpCbGTFcZvLav0PIv+Cugw/kRWS2uG9i1MV10ow==}
 
   '@iconify/tools@4.0.7':
     resolution: {integrity: sha512-zOJxKIfZn96ZRGGvIWzDRLD9vb2CsxjcLuM+QIdvwWbv6SWhm49gECzUnd4d2P0sq9sfodT7yCNobWK8nvavxQ==}
@@ -3534,6 +3546,10 @@ snapshots:
 
   '@esbuild/win32-x64@0.21.5':
     optional: true
+
+  '@fontsource/lato@5.1.0': {}
+
+  '@fontsource/noto-serif-jp@5.1.1': {}
 
   '@iconify/tools@4.0.7':
     dependencies:

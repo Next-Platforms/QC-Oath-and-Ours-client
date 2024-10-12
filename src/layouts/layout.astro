@@ -1,4 +1,10 @@
 ---
+import '@fontsource/noto-serif-jp'
+import '@fontsource/lato/100.css'
+import '@fontsource/lato/300.css'
+import '@fontsource/lato/400.css'
+import '@fontsource/lato/700.css'
+import '@fontsource/lato/900.css'
 import '../styles/globals.css'
 import { Icon } from 'astro-icon/components'
 import NavbarDrawer from '../components/navbar-drawer'
@@ -56,17 +62,19 @@ const links = [
 							return (
 								<a class="flex flex-col items-center text-center" href={link.href}>
 									<span class="text-base font-bold leading-[19px]">{link.title}</span>
-									<span class="text-base leading-[19px] text-[#D7D7D7]">{link.subtitle}</span>
+									<span class="english text-base leading-[19px] text-[#D7D7D7]">
+										{link.subtitle}
+									</span>
 								</a>
 							)
 						})
 					}
 					<a
-						class="hover:bg-dark-lime focus-visible:dark-lime flex h-full items-center justify-center bg-lime px-6 text-center text-white"
+						class="focus-visible:dark-lime flex h-full items-center justify-center bg-lime px-6 text-center text-white hover:bg-dark-lime"
 						href="#"
 					>
 						<p class="text-base font-bold leading-[19px]">
-							<span class="text-[18px] leading-[21px]">LINE</span>で<br />問い合わせる
+							<span class="english text-[18px] leading-[21px]">LINE</span>で<br />問い合わせる
 						</p>
 					</a>
 				</div>
@@ -109,7 +117,7 @@ const links = [
 			<a
 				href={'#'}
 				class="mt-4 inline-flex h-[58px] w-full items-center justify-center self-end text-nowrap rounded-md bg-lime px-8 text-base leading-[21px] text-white sm:max-w-max"
-				><span class="font-semibold">LINE</span>{' '}<span>で問い合わせる</span></a
+				><span class="english font-semibold">LINE</span>{' '}<span>で問い合わせる</span></a
 			>
 		</footer>
 	</body>

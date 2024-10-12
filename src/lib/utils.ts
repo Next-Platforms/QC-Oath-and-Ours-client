@@ -17,3 +17,63 @@ export function formatDate(date: Date | string) {
 
 	return `${year}.${month}.${day}`
 }
+
+type ConvertableToSearchParam = string | number | boolean | null | undefined
+const toSearchParam = (
+	value: ConvertableToSearchParam | ConvertableToSearchParam[]
+): string | string[] | undefined => {
+	if (Array.isArray(value)) {
+		const values = []
+		for (const v of value) {
+			const convertedValue = toSearchParam(v)
+			if (!convertedValue) continue
+			if (Array.isArray(convertedValue)) {
+				values.push(...convertedValue)
+			} else {
+				values.push(convertedValue)
+			}
+		}
+		return values
+	}
+
+	if (value === undefined) return
+	if (value === null) return 'null'
+	return value.toString()
+}
+
+export const objToSearchParams = (
+	obj: Record<string, ConvertableToSearchParam | ConvertableToSearchParam[]>
+) => {
+	const params = new URLSearchParams()
+	for (const [key, value] of Object.entries(obj)) {
+		const convertedValue = toSearchParam(value)
+
+		if (!convertedValue) continue
+
+		if (Array.isArray(convertedValue)) {
+			for (const v of convertedValue) {
+				params.append(key, v)
+			}
+		} else {
+			params.set(key, convertedValue)
+		}
+	}
+	return params
+}
+
+export const getSearchParams = () => {
+	return new URLSearchParams(window.location.search)
+}
+
+export const updateSearchParams = (
+	obj: Record<string, ConvertableToSearchParam | ConvertableToSearchParam[]>
+) => {
+	const currParams = getSearchParams()
+	const newParams = objToSearchParams(obj)
+
+	for (const [key, value] of newParams.entries()) {
+		currParams.set(key, value)
+	}
+
+	window.location.search = currParams.toString()
+}

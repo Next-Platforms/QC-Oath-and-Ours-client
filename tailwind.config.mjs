@@ -1,3 +1,5 @@
+import defaultTheme from 'tailwindcss/defaultTheme'
+
 /** @type {import('tailwindcss').Config} */
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -6,7 +8,11 @@ export default {
 			colors: {
 				peach: 'hsl(var(--peach))',
 				lime: 'hsl(var(--lime))',
-				'dark-lime': 'hsl(var(--dark-lime))'
+				'dark-lime': 'hsl(var(--dark-lime))',
+				divider: 'hsl(var(--divider))'
+			},
+			fontFamily: {
+				sans: ['Noto Serif JP', 'Lato', ...defaultTheme.fontFamily.sans]
 			}
 		}
 	},
@@ -31,6 +37,15 @@ export default {
 			}
 
 			addUtilities(newUtilities, ['responsive'])
+		},
+		function ({ addUtilities }) {
+			const newUtilities = {
+				'.english': {
+					fontFamily: 'Lato'
+				}
+			}
+
+			addUtilities(newUtilities)
 		}
 	]
 }

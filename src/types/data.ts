@@ -21,4 +21,9 @@ export type GalleryItem = {
 	id: number
 	title: { rendered: string }
 	media_html: string
+	gallery_category: { id: number; name: string }[]
+}
+
+export type UnhydratedGalleryItem = Omit<GalleryItem, 'gallery_category'> & {
+	gallery_category: number[]
 }

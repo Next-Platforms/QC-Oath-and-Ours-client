@@ -12,7 +12,7 @@ const { searchParams } = Astro.url
 
 const page = Number(searchParams.get('page') ?? 1)
 
-const pageSize = 9
+const pageSize = 1
 const skip = getSkip(page, pageSize)
 
 const { posts, total } = await PostsApi.list({
