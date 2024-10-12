@@ -1,8 +1,24 @@
 ---
+export const prerender = false
+
 import { Icon } from 'astro-icon/components'
 import ImageHeader from '../../components/page-components/common/image-header.astro'
 import { PaginationControls } from '../../components/ui/pagination-controls'
 import Layout from '../../layouts/layout.astro'
+import { getSkip } from '../../lib/utils'
+import { GalleryItemsApi } from '../../lib/api'
+
+const { searchParams } = Astro.url
+
+const page = Number(searchParams.get('page') ?? 1)
+
+const pageSize = 10
+const skip = getSkip(page, pageSize)
+
+const { items, total } = await GalleryItemsApi.list({
+	skip,
+	take: pageSize
+})
 ---
 
 <Layout title="Gallery">
@@ -23,21 +39,19 @@ import Layout from '../../layouts/layout.astro'
 		<div class="mt-[108px] w-full px-5 md:mt-[100px]">
 			<div>
 				<div>TABS</div>
-				<div class="mt-5 grid w-full grid-cols-2 gap-2 md:mt-10 md:grid-cols-4 md:gap-[14px]">
+				<div
+					class="gallery mt-5 grid w-full grid-cols-2 gap-2 md:mt-10 md:grid-cols-4 md:gap-[14px]"
+				>
 					{
-						new Array(10).fill({ image: './hero.jpg' }).map((item) => {
-							return (
-								<a href="#">
-									<img class="aspect-square h-auto w-full object-cover" src={item.image} />
-								</a>
-							)
+						items.map((item) => {
+							return <Fragment set:html={item.media_html} />
 						})
 					}
 				</div>
 			</div>
 		</div>
 		<div class="mt-[100px] flex flex-col items-center gap-[50px]">
-			<PaginationControls client:load page={1} pageSize={10} total={100} />
+			<PaginationControls client:load page={page} pageSize={pageSize} total={total} />
 			<div class="flex items-end gap-3 text-base">
 				<Icon class="aspect-square h-auto w-[30px]" name={'instagram'} />
 				Instagramをチェック
@@ -45,3 +59,11 @@ import Layout from '../../layouts/layout.astro'
 		</div>
 	</div>
 </Layout>
+<style>
+	.gallery {
+		img,
+		video {
+			@apply aspect-square h-auto w-full object-cover;
+		}
+	}
+</style>

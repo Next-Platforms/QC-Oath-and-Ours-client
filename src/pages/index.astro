@@ -1,4 +1,6 @@
 ---
+export const prerender = false
+
 import Layout from '../layouts/layout.astro'
 import PlanCard, { type Props } from '../components/page-components/common/plan-card.astro'
 import ColumnCard from '../components/page-components/home/column-card.astro'
@@ -7,12 +9,14 @@ import { VoiceCards } from '../components/page-components/home/voice-cards'
 
 import { Icon } from 'astro-icon/components'
 import FaqAccordions from '../components/page-components/home/faq-accordions'
-import { PostsApi } from '../lib/api'
+import { PostsApi, GalleryItemsApi } from '../lib/api'
 
 const { posts } = await PostsApi.list({
 	skip: 0,
 	take: 3
 })
+
+const { items } = await GalleryItemsApi.list({ take: 12, skip: 0 })
 ---
 
 <Layout title="Oath and ours">
@@ -114,16 +118,10 @@ const { posts } = await PostsApi.list({
 			<span class="hidden text-[83px] font-medium leading-none text-white md:inline-block"
 				>Dress</span
 			>
-			<div class="grid grid-cols-2 md:grid-cols-6">
+			<div class="gallery grid grid-cols-2 md:grid-cols-6">
 				{
-					[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((_) => {
-						return (
-							<img
-								class="aspect-square h-auto w-full object-cover"
-								src="/hero.jpg"
-								alt="A wedding picture"
-							/>
-						)
+					items.map((item) => {
+						return <Fragment set:html={item.media_html} />
 					})
 				}
 			</div>
@@ -268,4 +266,11 @@ const { posts } = await PostsApi.list({
 		</div>
 	</div>
 </Layout>
-<style></style>
+<style>
+	.gallery {
+		img,
+		video {
+			@apply aspect-square h-auto w-full object-cover;
+		}
+	}
+</style>

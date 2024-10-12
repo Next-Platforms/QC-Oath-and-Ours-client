@@ -1,5 +1,5 @@
 export type Post = {
-	id: string
+	id: number
 	date: string
 	modified: string
 	slug: string
@@ -15,4 +15,10 @@ export type Post = {
 
 export type UnhydratedPost = Omit<Post, 'categories'> & {
 	categories: number[]
+}
+
+export type GalleryItem = {
+	id: number
+	title: { rendered: string }
+	media_html: string
 }

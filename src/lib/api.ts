@@ -1,4 +1,4 @@
-import type { Post, UnhydratedPost } from '../types/data'
+import type { GalleryItem, Post, UnhydratedPost } from '../types/data'
 
 const SERVER_URL = import.meta.env.PUBLIC_WP_ENDPOINT
 
@@ -45,5 +45,39 @@ export const PostsApi = {
 		const [post] = await res.json()
 
 		return post as Post
+	}
+}
+
+export const GalleryItemsApi = {
+	list: async ({
+		take = 9,
+		skip = 0
+	}: {
+		take?: number | string | undefined
+		skip?: number | string | undefined
+	}) => {
+		if (process.env.NODE_ENV === 'development') {
+			return {
+				items: new Array(+take).fill({
+					id: 0,
+					media_html: `<img src="./hero.jpg" alt="Image of A wedding photo" style="max-width:100%;" />`,
+					title: { rendered: 'A wedding photo' }
+				} satisfies GalleryItem),
+				total: 24
+			}
+		} else {
+			const res = await fetch(
+				`${SERVER_URL}/gallery_item?${new URLSearchParams({
+					per_page: `${take}`,
+					offset: `${skip}`
+				}).toString()}`
+			)
+
+			const items = (await res.json()) as GalleryItem[]
+
+			const total = Number(res.headers.get('x-wp-total') ?? items.length)
+
+			return { items, total }
+		}
 	}
 }
