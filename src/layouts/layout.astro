@@ -46,9 +46,10 @@ const links = [
 			</div>
 
 			<div class="mx-auto hidden h-full w-full items-center justify-between page-container lg:flex">
-				<div class="flex items-center gap-4">
+				<a href="/" class="flex items-center gap-4">
 					<Icon class="aspect-[100/24] h-auto w-[192px]" name="logo" />
-				</div>
+					<p class="sr-only">Home page</p>
+				</a>
 				<div class="flex h-full items-center gap-[44px]">
 					{
 						links.map((link) => {
@@ -60,11 +61,14 @@ const links = [
 							)
 						})
 					}
-					<div class="flex h-full items-center justify-center bg-lime px-6 text-center text-white">
+					<a
+						class="hover:bg-dark-lime focus-visible:dark-lime flex h-full items-center justify-center bg-lime px-6 text-center text-white"
+						href="#"
+					>
 						<p class="text-base font-bold leading-[19px]">
 							<span class="text-[18px] leading-[21px]">LINE</span>で<br />問い合わせる
 						</p>
-					</div>
+					</a>
 				</div>
 			</div>
 		</header>
@@ -79,14 +83,28 @@ const links = [
 				<span>定休日 水曜日</span>
 			</div>
 			<div class="mt-16 flex items-center gap-8">
-				<a class="text-base leading-[19px]" href="/features">スタジオ紹介</a>
-				<a class="text-base leading-[19px]" href="/gallery">ギャラリー</a>
-				<a class="text-base leading-[19px]" href="/column">コラム</a>
+				<a
+					class="text-base leading-[19px] hover:opacity-70 focus-visible:opacity-70"
+					href="/features">スタジオ紹介</a
+				>
+				<a
+					class="text-base leading-[19px] hover:opacity-70 focus-visible:opacity-70"
+					href="/gallery">ギャラリー</a
+				>
+				<a class="text-base leading-[19px] hover:opacity-70 focus-visible:opacity-70" href="/column"
+					>コラム</a
+				>
 			</div>
 			<div class="mt-[54px] flex items-center gap-4">
-				<a href="#"><Icon class="h-[36px] w-[36px]" name="instagram" /></a>
-				<a href="#"><Icon class="h-[36px] w-[36px]" name="tiktok" /></a>
-				<a href="#"><Icon class="h-[36px] w-[36px]" name="youtube" /></a>
+				<a class="focus-within:opacity-70 hover:opacity-70" href="#"
+					><Icon class="h-[36px] w-[36px]" name="instagram" /></a
+				>
+				<a class="focus-within:opacity-70 hover:opacity-70" href="#"
+					><Icon class="h-[36px] w-[36px]" name="tiktok" /></a
+				>
+				<a class="focus-within:opacity-70 hover:opacity-70" href="#"
+					><Icon class="h-[36px] w-[36px]" name="youtube" /></a
+				>
 			</div>
 			<a
 				href={'#'}

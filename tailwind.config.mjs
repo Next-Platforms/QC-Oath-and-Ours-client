@@ -5,7 +5,8 @@ export default {
 		extend: {
 			colors: {
 				peach: 'hsl(var(--peach))',
-				lime: 'hsl(var(--lime))'
+				lime: 'hsl(var(--lime))',
+				'dark-lime': 'hsl(var(--dark-lime))'
 			}
 		}
 	},

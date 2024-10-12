@@ -5,7 +5,7 @@ const SERVER_URL = import.meta.env.PUBLIC_WP_ENDPOINT
 const hydratePost = (post: UnhydratedPost, categories: { id: number; name: string }[]): Post => {
 	const hydratedCategories = []
 
-	for (const c of post.categories) {
+	for (const c of post.categories.toSorted((a, b) => (a < b ? -1 : 1))) {
 		const cat = categories.find((x) => x.id === c)
 		if (!cat) continue
 		hydratedCategories.push(cat)

@@ -42,12 +42,15 @@ const NavbarDrawer = () => {
 							</a>
 						)
 					})}
-					<div className="flex h-[80px] w-full items-center justify-center bg-lime px-6 text-center text-white">
+					<a
+						className="hover:bg-dark-lime focus-visible:dark-lime flex h-[80px] w-full items-center justify-center bg-lime px-6 text-center text-white"
+						href="#"
+					>
 						<p className="text-base font-bold leading-[19px]">
 							<span className="text-[18px] leading-[21px]">LINE</span>で<br />
 							問い合わせる
 						</p>
-					</div>
+					</a>
 				</div>
 			</DrawerContent>
 		</Drawer>

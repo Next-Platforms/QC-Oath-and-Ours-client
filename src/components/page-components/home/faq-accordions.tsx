@@ -9,7 +9,7 @@ const FaqAccordions = ({
 	}[]
 }) => {
 	return (
-		<Accordion type="single" collapsible className="w-full space-y-5">
+		<Accordion type="multiple" className="w-full space-y-5">
 			{items.map((item, idx) => {
 				return (
 					<AccordionItem value={`${idx}`} key={idx}>
