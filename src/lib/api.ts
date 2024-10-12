@@ -56,7 +56,7 @@ export const GalleryItemsApi = {
 		take?: number | string | undefined
 		skip?: number | string | undefined
 	}) => {
-		if (process.env.NODE_ENV === 'development') {
+		if (process.env.NODE_ENV === 'production') {
 			return {
 				items: new Array(+take).fill({
 					id: 0,
