@@ -1,0 +1,49 @@
+---
+import { Icon } from 'astro-icon/components'
+import ImageHeader from '../../components/page-components/common/image-header.astro'
+import { PaginationControls } from '../../components/ui/pagination-controls'
+import Layout from '../../layouts/layout.astro'
+---
+
+<Layout title="Gallery">
+	<ImageHeader title="GALLERY" subtitle="ギャラリー" image="./hero.jpg" />
+	<div class="mx-auto pb-[100px] pt-[108px] page-container md:pb-[150px] md:pt-[160px]">
+		<p
+			class="mx-auto max-w-[950px] text-center text-sm leading-[16px] md:text-base md:leading-[37px]"
+		>
+			和装・洋装・スタジオ・ロケーションまで、お客様のなりたいを叶えられたお写真をぜひご覧ください。
+			「こんな写真が撮りたい」「こんなポーズがしたい」「こんなところで撮りたい」など
+			いろいろなリクエストもお待ちしております！
+		</p>
+		<div class="mt-[108px] w-full px-5 md:mt-[100px]">
+			<div>
+				<div>TABS</div>
+				<div class="mt-5 grid w-full grid-cols-2 gap-2 md:mt-10 md:grid-cols-4 md:gap-[14px]">
+					{
+						new Array(10).fill({ image: './hero.jpg' }).map((item) => {
+							return (
+								<a href="#">
+									<img class="aspect-square h-auto w-full object-cover" src={item.image} />
+								</a>
+							)
+						})
+					}
+				</div>
+			</div>
+		</div>
+		<div class="flex flex-col items-center gap-[50px] pb-[100px] pt-[100px] md:pb-[150px]">
+			<PaginationControls
+				client:load
+				setPage={() => {}}
+				setPageSize={() => {}}
+				page={1}
+				pageSize={10}
+				total={100}
+			/>
+			<div class="flex items-end gap-3 text-base">
+				<Icon class="aspect-square h-auto w-[30px]" name={'instagram'} />
+				Instagramをチェック
+			</div>
+		</div>
+	</div>
+</Layout>

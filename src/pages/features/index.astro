@@ -6,26 +6,12 @@ import MapInfoItem from '../../components/page-components/features/map-info-item
 import StudioCard from '../../components/page-components/features/studio-card.astro'
 import PlanCard from '../../components/page-components/common/plan-card.astro'
 import Layout from '../../layouts/layout.astro'
+import ImageHeader from '../../components/page-components/common/image-header.astro'
 ---
 
 <Layout title="Features">
-	<div class="flex flex-col items-center bg-peach pb-[60px] md:pb-[132px]">
-		<div class="relative aspect-[3/4] h-auto w-full md:aspect-[32/10]">
-			<img
-				src="./hero.jpg"
-				class="h-full w-full rounded-b-[100px] object-cover object-top md:rounded-b-[150px]"
-			/>
-			<b
-				class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[45%] text-[55px] font-bold leading-[96px] md:text-[93px] md:leading-[162px]"
-				>STUDIO</b
-			>
-		</div>
-		<div
-			class="mt-8 flex h-[69px] items-center justify-center bg-white px-10 text-[35px] leading-[42px] md:mt-[88px] md:h-[86px] md:px-12 md:text-[40px] md:leading-[48px]"
-		>
-			スタジオ紹介
-		</div>
-	</div>
+	<ImageHeader title="STUDIO" subtitle="スタジオ紹介" image="./hero.jpg" />
+
 	<div class="pt-[108px]">
 		<p
 			class="mx-auto max-w-[950px] px-6 text-center text-sm leading-[16px] md:text-base md:leading-[37px]"

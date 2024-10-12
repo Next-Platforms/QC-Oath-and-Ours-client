@@ -1,0 +1,27 @@
+---
+export interface Props {
+	title: string
+	subtitle: string
+	image: string
+}
+
+const { title, image, subtitle } = Astro.props
+---
+
+<div class="flex flex-col items-center bg-peach pb-[60px] md:pb-[132px]">
+	<div class="relative aspect-[3/4] h-auto w-full md:aspect-[32/10]">
+		<img
+			src={image}
+			class="h-full w-full rounded-b-[100px] object-cover object-top md:rounded-b-[150px]"
+		/>
+		<b
+			class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[45%] text-[55px] font-bold leading-[96px] md:text-[93px] md:leading-[162px]"
+			>{title}</b
+		>
+	</div>
+	<div
+		class="mt-8 flex h-[69px] items-center justify-center bg-white px-10 text-[35px] leading-[42px] md:mt-[88px] md:h-[86px] md:px-12 md:text-[40px] md:leading-[48px]"
+	>
+		{subtitle}
+	</div>
+</div>
