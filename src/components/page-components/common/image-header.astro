@@ -3,9 +3,11 @@ export interface Props {
 	title: string
 	subtitle: string
 	image: string
+	mobileImage?: string
+	alt: string
 }
 
-const { title, image, subtitle } = Astro.props
+const { title, mobileImage, image, subtitle } = Astro.props
 ---
 
 <div class="flex flex-col items-center bg-peach pb-[60px] md:pb-[132px]">
@@ -13,6 +15,8 @@ const { title, image, subtitle } = Astro.props
 		<img
 			src={image}
 			class="h-full w-full rounded-b-[50px] object-cover object-top md:rounded-b-[250px]"
+			srcset={mobileImage ? `${mobileImage} 768w, ${image} 1024w` : undefined}
+			sizes="(max-width: 767px) 100vw, 1024px"
 		/>
 		<b
 			class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[45%] text-[55px] font-bold leading-[96px] md:text-[93px] md:leading-[162px]"

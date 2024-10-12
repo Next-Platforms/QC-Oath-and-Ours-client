@@ -14,7 +14,12 @@ if (!post) return Astro.redirect('/404')
 ---
 
 <Layout title="Column">
-	<ImageHeader title="COLUMN" subtitle="コラム" image="../../hero.jpg" />
+	<ImageHeader
+		title="COLUMN"
+		subtitle="コラム"
+		image="../../hero.jpg"
+		alt="Wedding photo of a couple"
+	/>
 	<div
 		class="mx-auto flex min-h-[600px] w-full flex-col px-5 pb-[100px] pt-[100px] page-container md:pb-[60px] md:pt-[60px]"
 	>
