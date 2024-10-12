@@ -5,7 +5,7 @@ const links = [
 	{
 		title: 'スタジオ紹介',
 		subtitle: 'STUDIO',
-		href: '/features'
+		href: '/studio'
 	},
 	{
 		title: 'ギャラリー',
@@ -38,7 +38,7 @@ const NavbarDrawer = () => {
 								key={link.title}
 							>
 								<span className="text-base font-bold leading-[19px]">{link.title}</span>
-								<span className="english text-base leading-[19px] text-[#D7D7D7]">
+								<span className="text-base leading-[19px] text-[#D7D7D7] english">
 									{link.subtitle}
 								</span>
 							</a>
@@ -49,7 +49,7 @@ const NavbarDrawer = () => {
 						href="#"
 					>
 						<p className="text-base font-bold leading-[19px]">
-							<span className="english text-[18px] leading-[21px]">LINE</span>で<br />
+							<span className="text-[18px] leading-[21px] english">LINE</span>で<br />
 							問い合わせる
 						</p>
 					</a>
