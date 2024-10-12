@@ -29,7 +29,7 @@ const AccordionTrigger = React.forwardRef<
 			className={cn('group relative min-h-16 w-full text-start', className)}
 			{...props}
 		>
-			<div className="absolute inset-0 flex h-[50px] w-[60px] items-center justify-center rounded-br-2xl rounded-tl-2xl bg-black text-base leading-[19px] text-white md:text-lg md:leading-[21px]">
+			<div className="absolute inset-0 flex h-[50px] w-[60px] items-center justify-center rounded-br-2xl rounded-tl-2xl bg-black text-base leading-[19px] text-white outline outline-1 outline-black md:text-lg md:leading-[21px]">
 				<img src="/search.svg" className="h-7 w-5" />
 			</div>
 			<div className="ml-[60px] flex items-center gap-4 p-4">

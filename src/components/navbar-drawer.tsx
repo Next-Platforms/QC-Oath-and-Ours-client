@@ -33,7 +33,7 @@ const NavbarDrawer = () => {
 					{links.map((link) => {
 						return (
 							<a
-								className="flex flex-col items-center text-center"
+								className="flex flex-col items-center gap-1 text-center"
 								href={link.href}
 								key={link.title}
 							>

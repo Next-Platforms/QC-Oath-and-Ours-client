@@ -45,7 +45,10 @@ export const PostsApi = {
 		const res = await fetch(`${SERVER_URL}/posts?slug=${slug}`)
 		const [post] = await res.json()
 
-		return post as Post
+		const categoriesResponse = await fetch(`${SERVER_URL}/categories`)
+		const categories = await categoriesResponse.json()
+
+		return hydratePost(post, categories)
 	}
 }
 

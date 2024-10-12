@@ -14,7 +14,7 @@ const PaginationControlButton = ({
 		<button
 			type={type}
 			className={cn(
-				'english inline-flex h-[35px] w-[35px] items-center justify-center rounded-full border-2 border-black font-medium text-black hover:bg-[#333333] hover:text-white focus-visible:bg-[#333333] focus-visible:text-white',
+				'inline-flex h-[35px] w-[35px] items-center justify-center rounded-full border border-black font-medium text-black english hover:bg-[#333333] hover:text-white focus-visible:bg-[#333333] focus-visible:text-white',
 				active && 'bg-black text-white',
 				className
 			)}

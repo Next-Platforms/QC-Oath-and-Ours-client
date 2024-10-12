@@ -60,7 +60,7 @@ const links = [
 					{
 						links.map((link) => {
 							return (
-								<a class="flex flex-col items-center text-center" href={link.href}>
+								<a class="flex flex-col items-center gap-1 text-center" href={link.href}>
 									<span class="text-base font-bold leading-[19px]">{link.title}</span>
 									<span class="text-base leading-[19px] text-[#D7D7D7] english">
 										{link.subtitle}
@@ -115,7 +115,7 @@ const links = [
 			</div>
 			<a
 				href={'#'}
-				class="mt-4 inline-flex h-[58px] w-full items-center justify-center self-end text-nowrap rounded-md bg-lime px-8 text-base leading-[21px] text-white sm:max-w-max"
+				class="mt-4 inline-flex h-[58px] w-full items-center justify-center self-end text-nowrap rounded-md bg-lime px-8 text-base leading-[21px] text-white hover:bg-dark-lime focus-visible:bg-dark-lime sm:max-w-max"
 				><span class="font-semibold english">LINE</span>{' '}<span>で問い合わせる</span></a
 			>
 		</footer>
