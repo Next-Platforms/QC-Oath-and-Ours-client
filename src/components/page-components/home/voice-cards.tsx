@@ -21,6 +21,7 @@ const allItems = new Array(10)
 		author: '洋装スタジオプラン'
 	})
 	.map((item, idx) => ({ ...item, body: `${idx} - ${item.body}` }))
+
 export const VoiceCards = () => {
 	const [start, setStart] = useState(0)
 
@@ -50,9 +51,11 @@ export const VoiceCards = () => {
 					</button>
 				</div>
 				<div className="flex flex-col items-center self-end">
-					<h2 className="text-[70px] font-semibold leading-[84px] md:text-[93px]">VOICE</h2>
+					<h2 className="text-[70px] font-semibold leading-[84px] text-[#333333] md:text-[93px]">
+						VOICE
+					</h2>
 					<div className="flex w-full items-center gap-4">
-						<span className="h-1 w-full bg-black"></span>
+						<span className="h-1 w-full bg-[#333333]"></span>
 						<p className="shrink-0 text-[20px] md:text-[35px]">お客様の声</p>
 					</div>
 				</div>

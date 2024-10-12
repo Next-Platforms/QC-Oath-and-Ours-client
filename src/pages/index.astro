@@ -103,13 +103,15 @@ const { items } = await GalleryItemsApi.list({ take: 12, skip: 0 })
 
 	<!-- Gallery section -->
 	<div
-		class="flex min-h-screen flex-col rounded-t-[50px] bg-peach py-[120px] md:rounded-t-[200px] md:py-[184px]"
+		class="flex min-h-screen flex-col rounded-t-[60px] bg-peach py-[120px] md:rounded-t-[150px] md:py-[184px]"
 	>
 		<div class="self-center page-container">
-			<div class="ml-auto flex w-full max-w-max flex-col items-center pr-[10px] md:pr-0">
+			<div
+				class="ml-auto flex w-full max-w-max flex-col items-center pr-[10px] text-[#333333] md:pr-0"
+			>
 				<h2 class="text-[70px] font-semibold leading-[84px] english md:text-[93px]">GALLERY</h2>
 				<div class="flex w-full items-center gap-4">
-					<span class="h-1 w-full bg-black"></span>
+					<span class="h-1 w-full bg-[#333333]"></span>
 					<p class="shrink-0 text-[20px] md:text-[35px]">ギャラリー</p>
 				</div>
 			</div>
@@ -148,9 +150,11 @@ const { items } = await GalleryItemsApi.list({ take: 12, skip: 0 })
 	<!-- Plan section -->
 	<div class="mx-auto py-[125px] page-container md:py-[180px]">
 		<div class="flex max-w-max flex-col items-center pl-[10px] md:pl-0">
-			<h2 class="text-[70px] font-semibold leading-[84px] english md:text-[93px]">PLAN</h2>
+			<h2 class="text-[70px] font-semibold leading-[84px] text-[#333333] english md:text-[93px]">
+				PLAN
+			</h2>
 			<div class="flex w-full items-center gap-4">
-				<span class="h-1 w-full bg-black"></span>
+				<span class="h-1 w-full bg-[#333333]"></span>
 				<p class="shrink-0 text-[20px] md:text-[35px]">プラン紹介</p>
 			</div>
 		</div>
@@ -189,12 +193,14 @@ const { items } = await GalleryItemsApi.list({ take: 12, skip: 0 })
 	</div>
 
 	<!-- Column section -->
-	<div class="flex flex-col bg-peach pb-[150px] pt-[145px] md:pt-[184px]">
+	<div
+		class="flex flex-col overflow-hidden rounded-t-[60px] bg-peach pb-[150px] pt-[145px] text-[#333333] md:rounded-t-[150px] md:pt-[184px]"
+	>
 		<div class="self-center page-container">
 			<div class="ml-auto flex w-full max-w-max flex-col items-center pr-[10px] md:pr-0">
 				<h2 class="text-[70px] font-semibold leading-[84px] english md:text-[93px]">COLUMN</h2>
 				<div class="flex w-full items-center gap-4">
-					<span class="h-1 w-full bg-black"></span>
+					<span class="h-1 w-full bg-[#333333]"></span>
 					<p class="shrink-0 text-[20px] md:text-[35px]">スタッフコラム</p>
 				</div>
 			</div>
@@ -211,9 +217,11 @@ const { items } = await GalleryItemsApi.list({ take: 12, skip: 0 })
 	<!-- Flow section -->
 	<div class="mx-auto w-full pb-[105px] pt-[148px] page-container md:pt-[180px]">
 		<div class="flex max-w-max flex-col items-center pl-[10px] md:pl-0">
-			<h2 class="text-[70px] font-semibold leading-[84px] english md:text-[93px]">FLOW</h2>
+			<h2 class="text-[70px] font-semibold leading-[84px] text-[#333333] english md:text-[93px]">
+				FLOW
+			</h2>
 			<div class="flex w-full items-center gap-4">
-				<span class="h-1 w-full bg-black"></span>
+				<span class="h-1 w-full bg-[#333333]"></span>
 				<p class="shrink-0 text-[20px] md:text-[35px]">撮影の流れ</p>
 			</div>
 		</div>
@@ -245,16 +253,18 @@ const { items } = await GalleryItemsApi.list({ take: 12, skip: 0 })
 	</div>
 
 	<!-- Voice section -->
-	<div class="flex flex-col bg-peach pb-[150px] pt-[184px] english">
+	<div
+		class="flex flex-col rounded-t-[60px] bg-peach pb-[150px] pt-[184px] english md:rounded-t-[150px]"
+	>
 		<VoiceCards client:load />
 	</div>
 
 	<!-- FAQ section -->
 	<div class="mx-auto pb-[102px] pt-[126px] page-container english md:pb-[152px] md:pt-[180px]">
-		<div class="flex max-w-[326px] flex-col items-start pl-[10px] md:pl-0">
+		<div class="flex max-w-[326px] flex-col items-start pl-[10px] text-[#333333] md:pl-0">
 			<h2 class="text-[70px] font-semibold leading-[84px] md:text-[93px]">FAQ</h2>
 			<div class="flex w-full items-center gap-4">
-				<span class="h-1 w-full bg-black"></span>
+				<span class="h-1 w-full bg-[#333333]"></span>
 				<p class="shrink-0 text-[20px] md:text-[35px]">よくある質問</p>
 			</div>
 		</div>
