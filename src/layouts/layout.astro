@@ -8,6 +8,7 @@ import '@fontsource/lato/900.css'
 import '../styles/globals.css'
 import { Icon } from 'astro-icon/components'
 import NavbarDrawer from '../components/navbar-drawer'
+import { LINEUrl } from '../constants'
 
 interface Props {
 	title: string
@@ -52,7 +53,7 @@ const links = [
 			</div>
 
 			<div class="mx-auto hidden h-full w-full items-center justify-between page-container lg:flex">
-				<a href="/" class="flex items-center gap-4">
+				<a href="/" class="flex items-center gap-4 hover:opacity-70 focus-visible:opacity-70">
 					<Icon class="aspect-[100/24] h-auto w-[192px]" name="logo" />
 					<p class="sr-only">Home page</p>
 				</a>
@@ -71,7 +72,7 @@ const links = [
 					}
 					<a
 						class="focus-visible:dark-lime flex h-full items-center justify-center bg-lime px-6 text-center text-white hover:bg-dark-lime"
-						href="#"
+						href={LINEUrl}
 					>
 						<p class="text-base font-bold leading-[19px]">
 							<span class="text-[18px] leading-[21px] english">LINE</span>で<br />問い合わせる
@@ -114,7 +115,7 @@ const links = [
 				>
 			</div>
 			<a
-				href={'#'}
+				href={LINEUrl}
 				class="mt-4 inline-flex h-[58px] w-full items-center justify-center self-end text-nowrap rounded-md bg-lime px-8 text-base leading-[21px] text-white hover:bg-dark-lime focus-visible:bg-dark-lime sm:max-w-max"
 				><span class="font-semibold english">LINE</span>{' '}<span>で問い合わせる</span></a
 			>

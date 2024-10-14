@@ -1,4 +1,6 @@
 ---
+import { LINEUrl } from '../../../constants'
+
 export interface Props {
 	image: {
 		src: string
@@ -12,7 +14,7 @@ export interface Props {
 	ctaLink: string
 }
 
-const { image, heading, title, body, subItems, price, ctaLink } = Astro.props
+const { image, heading, title, body, subItems, price } = Astro.props
 ---
 
 <div
@@ -54,7 +56,7 @@ const { image, heading, title, body, subItems, price, ctaLink } = Astro.props
 			<p class="text-base font-medium leading-[19px]">(税込)</p>
 		</div>
 		<a
-			href={ctaLink}
+			href={LINEUrl}
 			class="focus-visible:dark-lime mt-4 inline-flex h-[46px] items-center justify-center text-nowrap rounded-[5px] bg-lime px-8 font-bold text-white hover:bg-dark-lime"
 			><span class="english">LINE</span><span>で問い合わせる</span></a
 		>

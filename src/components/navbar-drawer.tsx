@@ -1,5 +1,6 @@
 import { Drawer, DrawerContent, DrawerTrigger } from './ui/drawer'
 import Logo from '../icons/logo.svg'
+import { LINEUrl } from '../constants'
 
 const links = [
 	{
@@ -29,7 +30,12 @@ const NavbarDrawer = () => {
 			</DrawerTrigger>
 			<DrawerContent className="h-full w-full max-w-[375px] rounded-none" includeHandle={false}>
 				<div className="flex h-full flex-col items-center justify-center gap-[44px] px-6">
-					<img className="h-[45px] w-[192px]" src={Logo.src} />
+					<a
+						className="h-[45px] w-[192px] shrink-0 hover:opacity-70 focus-visible:opacity-70"
+						href="/"
+					>
+						<img className="h-full w-full" src={Logo.src} />
+					</a>
 					{links.map((link) => {
 						return (
 							<a
@@ -46,7 +52,7 @@ const NavbarDrawer = () => {
 					})}
 					<a
 						className="focus-visible:dark-lime flex h-[80px] w-full items-center justify-center bg-lime px-6 text-center text-white hover:bg-dark-lime"
-						href="#"
+						href={LINEUrl}
 					>
 						<p className="text-base font-bold leading-[19px]">
 							<span className="text-[18px] leading-[21px] english">LINE</span>で<br />
