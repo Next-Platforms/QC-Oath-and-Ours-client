@@ -5,7 +5,7 @@ import BackArrow from '../../../icons/back-arrow.svg'
 const VoiceCard = ({ body, author, image }: { body: string; author: string; image: string }) => {
 	return (
 		<div className="flex w-full max-w-[400px] shrink-0 flex-col rounded-xl bg-white p-5">
-			<img className="h-[240px] w-full" src={image} />
+			<img className="h-[240px] w-full object-cover" src={image} />
 			<p className="mt-[26px] text-base leading-[33px] md:mt-7">{body}</p>
 			<span className="ml-auto mt-[26px] inline-block max-w-max text-base">
 				洋装スタジオプラン
@@ -65,7 +65,7 @@ export const VoiceCards = () => {
 
 	return (
 		<div className="mx-auto flex flex-col page-container">
-			<div className="flex w-full flex-col-reverse items-end justify-between gap-[74px] pr-[10px] md:flex-row md:gap-0 md:pr-0">
+			<div className="mx-auto flex w-full flex-col-reverse items-end justify-between gap-[74px] pr-[10px] md:flex-row md:gap-0 md:pr-0">
 				<div className="flex items-center gap-[10px]">
 					<button
 						className="inline-flex aspect-square h-auto w-[60px] items-center justify-center rounded-full bg-black text-white"

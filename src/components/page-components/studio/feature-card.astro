@@ -1,18 +1,19 @@
 ---
 export interface Props {
+	image: string
 	index: number | string
 	title: string
 	body: string
 }
 
-const { index, title, body } = Astro.props
+const { image, index, title, body } = Astro.props
 ---
 
-<div class="flex flex-col items-center px-5 lg:flex-row lg:items-start">
+<div class="flex flex-col items-center px-5 lg:flex-row lg:items-start lg:px-0">
 	<div
-		class="relative flex aspect-[88/100] h-auto w-full shrink-0 flex-col lg:aspect-[15/10] lg:max-w-[630px]"
+		class="relative flex aspect-[88/100] h-auto w-full shrink-0 flex-col lg:aspect-[15/10] lg:max-w-[570px]"
 	>
-		<img class="h-full w-full rounded-b-[20px] object-cover md:rounded-bl-none" src="./hero.jpg" />
+		<img class="h-full w-full rounded-b-[20px] object-cover md:rounded-bl-none" src={image} />
 		<b
 			class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 self-center text-[75px] font-bold leading-[92px] english lg:bottom-[unset] lg:left-[unset] lg:right-0 lg:top-0 lg:-translate-y-1/2 lg:translate-x-1/2"
 			>{index}</b

@@ -39,14 +39,30 @@ import ImageHeader from '../../components/page-components/common/image-header.as
 			</div>
 			<div class="mt-[95px] flex flex-col gap-[100px]">
 				{
-					new Array(5)
-						.fill({
-							title: '特徴の見出しが入ります',
-							body: '当スタジオでは、和装・洋装に関わらずどの衣装を選んで頂いてもランクアップ料金は頂いておりません。また、ご自身で用意された衣装や撮影小物などの持ち込み料金も一切かかりません。 ぜひ、お二人の好きな衣装で撮影に臨んで頂ければと思います。'
-						})
-						.map((item, idx) => {
-							return <FeatureCard index={`${idx + 1}`.padStart(2, '0')} {...item} />
-						})
+					[
+						{
+							image: './features/1.jpeg',
+							title: 'どの衣装を選んでもランクアップ料金なし',
+							body: '当スタジオでは、和装・洋装に関わらずどの衣装を選んで頂いてもランクアップ料金は頂いておりません。また、ご自身で用意された衣装や撮影小物などの持ち込み料金も一切かかりません。ぜひ、お二人の好きな衣装で撮影に臨んで頂ければと思います。'
+						},
+						{
+							image: './features/2.jpg',
+							title: 'ご家族やご親族との家族写真、集合写真も追加料金無しで撮影可能',
+							body: '当スタジオでは、ご家族やご親族とのお写真も無料で撮影させて頂くことが可能です。その際、お母様の黒留袖、お父様のモーニング衣装も無料でお貸出致します。ご家族やご親族と想い出に残る時間をお過ごしください。'
+						},
+						{
+							image: './features/3.jpeg',
+							title: 'ロケーション撮影はどこでも撮影可能',
+							body: 'ロケーション撮影の場合は、富山県内なら許可が取れればどこでも撮影可能です。例えばお二人の思い出の地やご自宅、公共施設などお二人らしい場所での撮影や、撮影希望のイメージなどございましたらロケ地のご提案を致します。当店は富山県の企業ですし、過去に様々な撮影実績もございますのでお気軽にご相談ください。'
+						},
+						{
+							image: './features/4.jpg',
+							title: '和装、洋装それぞれに合うように設計したスタジオ',
+							body: '8000本のお花が彩るスタジオは過去3万人以上撮影実績があるオーナーフォトグラファーが設計した細部にもこだわった豊富なブースのあるスタジオです。自然光が入り光が柔らかくスタジオに差し込みます。'
+						}
+					].map((item, idx) => {
+						return <FeatureCard index={`${idx + 1}`.padStart(2, '0')} {...item} />
+					})
 				}
 			</div>
 
@@ -66,14 +82,42 @@ import ImageHeader from '../../components/page-components/common/image-header.as
 			</div>
 			<div class="mx-auto mt-[96px] grid grid-cols-1 gap-[70px] md:mt-[70px] md:grid-cols-3">
 				{
-					new Array(3)
-						.fill({
+					[
+						{
 							title: 'セット1',
-							body: '白やピンクをメインにした当スタジオのメインセット。お花に囲まれた撮影ができます'
-						})
-						.map((item) => {
-							return <StudioCard {...item} />
-						})
+							body: '白やピンクをメインにした当スタジオのメインセット。お花に囲まれた撮影ができます。'
+						},
+						{
+							title: 'セット2',
+							body: 'たくさんのグリーンとシャビーな雰囲気のドアが特徴。和装でも洋装でもあうスタジオセット。'
+						},
+						{
+							title: 'セット3',
+							body: 'シンプルなグレーの壁に自然光が差し込む。床は古材を使っており、和装洋装にもあう撮影セット'
+						},
+						{
+							title: 'セット4',
+							body: 'アンティークな雰囲気がただよう撮影セット。アンティーク色のお花に加えて扉もアンティークの1930年台のドアを使用。'
+						},
+						{
+							title: 'セット5',
+							body: 'シンプルながら味わいのある青色の壁面。スタイリッシュな撮影にぴったり。'
+						},
+						{
+							title: 'セット6',
+							body: 'シャンデリアが印象的なセット。アンティーク風フレームの中に入ったかのような撮影ができます。'
+						},
+						{
+							title: 'セット7',
+							body: 'モクレンなどを中心に和を感じるお花をメインに選んだ、色打掛や白無垢に似合うセット'
+						},
+						{
+							title: 'セット8',
+							body: '藤の花の棚をイメージして製作。自然光の柔らかな光と藤の花のコントラストが映えるセット。'
+						}
+					].map((item) => {
+						return <StudioCard {...item} />
+					})
 				}
 			</div>
 
@@ -91,32 +135,92 @@ import ImageHeader from '../../components/page-components/common/image-header.as
 				</div>
 				<div class="mt-[95px] flex flex-col items-center gap-[70px] md:mt-[60px] md:gap-[50px]">
 					{
-						new Array(5)
-							.fill({
+						[
+							{
 								image: {
 									src: './pricing-plans/1.jpg',
 									alt: 'A couple together in wedding attire '
 								},
 								heading: '1万本の花で演出するロマンティックな洋風スタジオ',
 								title: '洋装スタジオフォト',
-								body: 'ウェデイングドレスもカラードレスも選び放題。もちろん、衣装ランクアップや洋装小物ランクアップも追加料金なしで撮影可能です。貸出小物も多数取り揃えております。',
+								body: 'ウェデイングドレスもカラードレスも選び放題。もちろん、衣装ランクアップや洋装小物ランクアップも追加料金なしで撮影可能です。貸出小物も多数取り揃えております',
 								subItems: ['データ120カット付で問い合わせる', '3背景以上', '撮影時間1時間半'],
 								price: '150,000',
 								ctaLink: '#'
-							})
-							.map((item) => {
-								return (
-									<PlanCard
-										image={item.image}
-										heading={item.heading}
-										title={item.title}
-										body={item.body}
-										subItems={item.subItems}
-										price={item.price}
-										ctaLink={item.ctaLink}
-									/>
-								)
-							})
+							},
+							{
+								image: {
+									src: './pricing-plans/2.jpg',
+									alt: 'A couple together in wedding attire '
+								},
+								heading: '日本の美を凝縮した和風スタジオ',
+								title: '和装スタジオフォト',
+								body: '白無垢も色打掛も選び放題。お母様の黒留袖セット付きプランも。洋装スタジオフォトと同じく、衣装ランクアップや和装小物ランクアップも追加料金なしで撮影可能です。',
+								subItems: ['データ120カット付', '3背景以上', '撮影時間1時間半'],
+								price: '170,000',
+								ctaLink: '#'
+							},
+							{
+								image: {
+									src: './pricing-plans/3.jpg',
+									alt: 'A couple together in wedding attire '
+								},
+								heading: '和も洋も、お二人の全ての美を残したいあなたへ',
+								title: '和洋装スタジオフォト',
+								body: 'ウェディングドレス、カラードレス、白無垢、色打掛から全部で4着も着られるプラン。全データお渡し可能、和装・洋装衣装のランクアップ、和洋小物ランクアップ料金もなしで撮影可能です。',
+								subItems: ['データ240カット付', '全背景使用', '撮影時間3時間'],
+								price: '210,000',
+								ctaLink: '#'
+							},
+							{
+								image: {
+									src: './pricing-plans/4.jpg',
+									alt: 'A couple together in wedding attire '
+								},
+								heading: '富山県内なら許可が取れればどこでもOK',
+								title: '洋装ロケーションフォト',
+								body: 'ナチュラルからスタイリッシュ、デイフォトからナイトフォトまで、お二人の想い出の場所をもっと特別な場所に。富山県内なら許可が取れればどこでも撮影可能。衣装や撮影小物等の持ち込み料金も無料です。',
+								subItems: ['データ180カット付', '撮影時間1時間半'],
+								price: '180,000',
+								ctaLink: '#'
+							},
+							{
+								image: {
+									src: './pricing-plans/5.jpg',
+									alt: 'A couple together in wedding attire '
+								},
+								heading: '富山県内なら許可が取れればどこでもOK',
+								title: '和装ロケーションフォト',
+								body: 'レトロな町並みから屋外庭園、映画のセットのような歴史ある場所での撮影もOKです。富山県内なら許可が取れればどこでも撮影可能。衣装や撮影小物等の持ち込み料金も無料です。',
+								subItems: ['データ180カット付', '撮影時間1時間半'],
+								price: '200,000',
+								ctaLink: '#'
+							},
+							{
+								image: {
+									src: './pricing-plans/6.jpg',
+									alt: 'A couple together in wedding attire '
+								},
+								heading: '好きな場所、好きな衣装で想い出を残したいあなたへ',
+								title: '和洋装ロケーションフォト',
+								body: '和装と洋装迷ったら…そんなあなたにおすすめのプラン。300カット以上の撮影データお渡し可能。富山県内なら許可が取れればどこでも撮影、衣装や撮影小物等の持ち込み料金も無料です。',
+								subItems: ['データ360カット付', '撮影時間3時間'],
+								price: '240,000',
+								ctaLink: '#'
+							}
+						].map((item) => {
+							return (
+								<PlanCard
+									image={item.image}
+									heading={item.heading}
+									title={item.title}
+									body={item.body}
+									subItems={item.subItems}
+									price={item.price}
+									ctaLink={item.ctaLink}
+								/>
+							)
+						})
 					}
 				</div>
 				<div class="mt-[60px] flex flex-col gap-[14px]">
@@ -126,40 +230,99 @@ import ImageHeader from '../../components/page-components/common/image-header.as
 			</div>
 
 			<div class="mt-[70px] flex flex-col items-center">
-				<p class="text-[35px] leading-[42px]">オプション</p>
-				<p class="mt-[72px] text-[25px] leading-[30px] md:mt-[60px]">アルバム</p>
-				<div class="mt-6 w-full max-w-[882px]">
+				<p class="text-[35px] font-bold leading-[42px]">オプション</p>
+				<p class="mt-[72px] text-[25px] font-bold leading-[30px] md:mt-[60px]">アルバム</p>
+				<div class="mt-6 w-full max-w-[882px] px-5">
 					{
-						new Array(3)
-							.fill({
+						[
+							{
 								title: 'アプリコット',
 								prices: [
 									{
-										points: 20,
-										price: '50,000'
-									},
-									{
-										points: 20,
-										price: '50,000'
-									},
-									{
-										points: 20,
-										price: '50,000'
+										price: '20,000',
+										pretext: '3面6カット'
 									}
 								]
-							})
-							.map((item) => {
-								return <FeaturePriceCard {...item} />
-							})
+							},
+							{
+								title: 'フルール（CTWアルバム）',
+								prices: [
+									{
+										points: 10,
+										price: '25,000'
+									},
+									{
+										points: 20,
+										price: '35,000'
+									},
+									{
+										points: 30,
+										price: '45,000'
+									}
+								]
+							},
+							{
+								title: 'アルブル（ウッドカービング）',
+								prices: [
+									{
+										points: 20,
+										price: '55,000'
+									},
+									{
+										points: 30,
+										price: '65,000'
+									}
+								]
+							},
+							{
+								title: 'セルモン（フルフラット）',
+								prices: [
+									{
+										points: 20,
+										price: '45,000'
+									},
+									{
+										points: 30,
+										price: '55,000'
+									}
+								]
+							}
+						].map((item) => {
+							return <FeaturePriceCard {...item} />
+						})
 					}
 				</div>
 			</div>
 
 			<div class="mt-[55px] flex w-full flex-col items-center">
-				<p class="mb-6 md:mb-[26px] md:text-[25px] md:leading-[30px]">その他オプション</p>
-				<div class="mt-[26px] flex w-full max-w-[882px] flex-col">
+				<p class="mb-6 font-bold md:mb-[26px] md:text-[25px] md:leading-[30px]">その他オプション</p>
+				<div class="mt-[26px] flex w-full max-w-[882px] flex-col px-5">
 					{
-						new Array(10).fill({ title: '美白0（レタッチ）', price: '50,000' }).map((item) => {
+						[
+							{ title: '美白0（レタッチ）', price: '25,000' },
+							{ title: '洋装+（衣装変更）', price: '20,000' },
+							{ title: 'ヘアメイクリハーサル', price: '10,000' },
+							{ title: '参列者様ヘアメイク', price: '15,000' },
+							{ title: '着付（レンタル無料）', price: '10,000' },
+							{ title: 'お子様追加料金', price: '0' },
+							{ title: 'ペット', price: '10,000' },
+							{ title: '動画撮影', price: '100,000' },
+							{ title: '集合写真', price: '0' },
+							{ title: 'ロケ地追加', price: '35,000' },
+							{ title: 'データ納品特急料金', price: '7,000' },
+							{ title: '和装かけ替え', price: '30,000' },
+							{ title: '生花', price: 'ok' },
+							{ title: '夜フォト', price: '10,000' },
+							{ title: 'スタジオオプション（ロケの方のみ）', price: '20,000' },
+							{ title: '綿帽子', price: '10,000' },
+							{ title: 'アイテム', price: '0' },
+							{ title: 'キャンパスプリントS（242×332）', price: '20,000' },
+							{ title: 'キャンパスプリントM（380×455）', price: '30,000' },
+							{ title: 'キャンパスプリントL（500×606）', price: '40,000' },
+							{ title: 'フォトデコ（6枚）', price: '15,000' },
+							{ title: '台紙付きUSB', price: '7,000' },
+							{ title: 'DVD', price: '3,000' }
+						].map((item) => {
 							return <FeatureTableItem {...item} />
 						})
 					}
@@ -183,21 +346,36 @@ import ImageHeader from '../../components/page-components/common/image-header.as
 				<div
 					class="mt-[96px] aspect-[78/100] w-full overflow-hidden rounded-lg md:mt-[100px] md:aspect-[25/10] md:max-w-[1200px]"
 				>
-					<img class="h-full w-full object-cover" src="./map.png" />
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3199.8671972124125!2d137.21588197629217!3d36.67769397459505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff791f075ee7b11%3A0xb38e92f3ec48e22f!2z44Km44Kn44OH44Kj44Oz44Kw44OV44Kp44OI44K544K_44K444KqIE9hdGjvvIZPdXJz!5e0!3m2!1sen!2sin!4v1728905769550!5m2!1sen!2sin"
+						width="100%"
+						height="100%"
+						style="border:0;"
+						allowfullscreen=""
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"></iframe>
 				</div>
 				<div class="mx-auto mt-[30px] w-full max-w-[600px]">
 					{
-						new Array(3)
-							.fill({
+						[
+							{
+								title: '住所',
+								items: ['富山県富山市小泉町４４']
+							},
+							{
 								title: '営業時間',
 								items: [
 									'9：00～18：00',
 									'※ご要望に合わせ調整は可能ですので営業時間外にお越しになりたい場合お問合せください。'
 								]
-							})
-							.map((item) => {
-								return <MapInfoItem {...item} />
-							})
+							},
+							{
+								title: '定休日',
+								items: ['水曜日']
+							}
+						].map((item) => {
+							return <MapInfoItem {...item} />
+						})
 					}
 				</div>
 			</div>
