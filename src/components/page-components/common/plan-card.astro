@@ -1,5 +1,9 @@
 ---
 export interface Props {
+	image: {
+		src: string
+		alt: string
+	}
 	heading: string
 	title: string
 	body: string
@@ -8,13 +12,17 @@ export interface Props {
 	ctaLink: string
 }
 
-const { heading, title, body, subItems, price, ctaLink } = Astro.props
+const { image, heading, title, body, subItems, price, ctaLink } = Astro.props
 ---
 
 <div
 	class="flex w-full flex-col overflow-hidden rounded-[20px] shadow-lg md:flex-row md:even:flex-row-reverse"
 >
-	<img src="./hero.jpg" class="aspect-[107/100] w-full object-cover md:aspect-[unset]" />
+	<img
+		src={image.src}
+		class="aspect-[107/100] w-full object-cover md:aspect-[unset]"
+		alt={image.alt}
+	/>
 	<div class="flex w-full flex-col items-center px-10 py-10 text-center">
 		<div
 			class="rounded-[5px] bg-peach p-[11px] text-sm font-bold leading-[16px] md:text-[19px] md:text-base"
@@ -41,8 +49,8 @@ const { heading, title, body, subItems, price, ctaLink } = Astro.props
 			}
 		</div>
 		<div class="mt-[26px] flex items-baseline gap-2">
-			<span class="english text-base font-medium leading-[19px]">¥</span>
-			<b class="english text-4xl font-medium leading-[43px]">{price}</b>
+			<span class="text-base font-medium leading-[19px] english">¥</span>
+			<b class="text-4xl font-medium leading-[43px] english">{price}</b>
 			<p class="text-base font-medium leading-[19px]">(税込)</p>
 		</div>
 		<a

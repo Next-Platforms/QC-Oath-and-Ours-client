@@ -93,6 +93,10 @@ import ImageHeader from '../../components/page-components/common/image-header.as
 					{
 						new Array(5)
 							.fill({
+								image: {
+									src: './pricing-plans/1.jpg',
+									alt: 'A couple together in wedding attire '
+								},
 								heading: '1万本の花で演出するロマンティックな洋風スタジオ',
 								title: '洋装スタジオフォト',
 								body: 'ウェデイングドレスもカラードレスも選び放題。もちろん、衣装ランクアップや洋装小物ランクアップも追加料金なしで撮影可能です。貸出小物も多数取り揃えております。',
@@ -103,6 +107,7 @@ import ImageHeader from '../../components/page-components/common/image-header.as
 							.map((item) => {
 								return (
 									<PlanCard
+										image={item.image}
 										heading={item.heading}
 										title={item.title}
 										body={item.body}

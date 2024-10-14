@@ -162,27 +162,92 @@ const { items } = await GalleryItemsApi.list({ take: 12, skip: 0 })
 		<div class="mt-[72px]">
 			<div class="flex flex-col items-center gap-[70px] md:gap-[50px]">
 				{
-					new Array(5)
-						.fill({
+					[
+						{
+							image: {
+								src: './pricing-plans/1.jpg',
+								alt: 'A couple together in wedding attire '
+							},
 							heading: '1万本の花で演出するロマンティックな洋風スタジオ',
 							title: '洋装スタジオフォト',
-							body: 'ウェデイングドレスもカラードレスも選び放題。もちろん、衣装ランクアップや洋装小物ランクアップも追加料金なしで撮影可能です。貸出小物も多数取り揃えております。',
+							body: 'ウェデイングドレスもカラードレスも選び放題。もちろん、衣装ランクアップや洋装小物ランクアップも追加料金なしで撮影可能です。貸出小物も多数取り揃えております',
 							subItems: ['データ120カット付で問い合わせる', '3背景以上', '撮影時間1時間半'],
 							price: '150,000',
 							ctaLink: '#'
-						})
-						.map((item) => {
-							return (
-								<PlanCard
-									heading={item.heading}
-									title={item.title}
-									body={item.body}
-									subItems={item.subItems}
-									price={item.price}
-									ctaLink={item.ctaLink}
-								/>
-							)
-						})
+						},
+						{
+							image: {
+								src: './pricing-plans/2.jpg',
+								alt: 'A couple together in wedding attire '
+							},
+							heading: '日本の美を凝縮した和風スタジオ',
+							title: '和装スタジオフォト',
+							body: '白無垢も色打掛も選び放題。お母様の黒留袖セット付きプランも。洋装スタジオフォトと同じく、衣装ランクアップや和装小物ランクアップも追加料金なしで撮影可能です。',
+							subItems: ['データ120カット付', '3背景以上', '撮影時間1時間半'],
+							price: '170,000',
+							ctaLink: '#'
+						},
+						{
+							image: {
+								src: './pricing-plans/3.jpg',
+								alt: 'A couple together in wedding attire '
+							},
+							heading: '和も洋も、お二人の全ての美を残したいあなたへ',
+							title: '和洋装スタジオフォト',
+							body: 'ウェディングドレス、カラードレス、白無垢、色打掛から全部で4着も着られるプラン。全データお渡し可能、和装・洋装衣装のランクアップ、和洋小物ランクアップ料金もなしで撮影可能です。',
+							subItems: ['データ240カット付', '全背景使用', '撮影時間3時間'],
+							price: '210,000',
+							ctaLink: '#'
+						},
+						{
+							image: {
+								src: './pricing-plans/4.jpg',
+								alt: 'A couple together in wedding attire '
+							},
+							heading: '富山県内なら許可が取れればどこでもOK',
+							title: '洋装ロケーションフォト',
+							body: 'ナチュラルからスタイリッシュ、デイフォトからナイトフォトまで、お二人の想い出の場所をもっと特別な場所に。富山県内なら許可が取れればどこでも撮影可能。衣装や撮影小物等の持ち込み料金も無料です。',
+							subItems: ['データ180カット付', '撮影時間1時間半'],
+							price: '180,000',
+							ctaLink: '#'
+						},
+						{
+							image: {
+								src: './pricing-plans/5.jpg',
+								alt: 'A couple together in wedding attire '
+							},
+							heading: '富山県内なら許可が取れればどこでもOK',
+							title: '和装ロケーションフォト',
+							body: 'レトロな町並みから屋外庭園、映画のセットのような歴史ある場所での撮影もOKです。富山県内なら許可が取れればどこでも撮影可能。衣装や撮影小物等の持ち込み料金も無料です。',
+							subItems: ['データ180カット付', '撮影時間1時間半'],
+							price: '200,000',
+							ctaLink: '#'
+						},
+						{
+							image: {
+								src: './pricing-plans/6.jpg',
+								alt: 'A couple together in wedding attire '
+							},
+							heading: '好きな場所、好きな衣装で想い出を残したいあなたへ',
+							title: '和洋装ロケーションフォト',
+							body: '和装と洋装迷ったら…そんなあなたにおすすめのプラン。300カット以上の撮影データお渡し可能。富山県内なら許可が取れればどこでも撮影、衣装や撮影小物等の持ち込み料金も無料です。',
+							subItems: ['データ360カット付', '撮影時間3時間'],
+							price: '240,000',
+							ctaLink: '#'
+						}
+					].map((item) => {
+						return (
+							<PlanCard
+								image={item.image}
+								heading={item.heading}
+								title={item.title}
+								body={item.body}
+								subItems={item.subItems}
+								price={item.price}
+								ctaLink={item.ctaLink}
+							/>
+						)
+					})
 				}
 			</div>
 			<div class="mt-[60px] flex flex-col gap-[14px]">
@@ -228,26 +293,46 @@ const { items } = await GalleryItemsApi.list({ take: 12, skip: 0 })
 
 		<div class="mt-[100px] flex w-full flex-col items-center px-8">
 			{
-				new Array(5)
-					.fill({
+				[
+					{
+						image: '/flow-steps/1.jpeg',
 						title: 'まずは当スタジオの全てが分かるLINEに登録！',
-						body: `当スタジオのLINE公式アカウントよりお友達登録をお願いします。スタジオのブースやおすすめロケ地が見られたり、料金プラン詳細やドレスの種類の確認など、LINE公式アカウントでしか見られない「当スタジオの全て」が盛り沢山です！`,
-						image: '/flow-1.jpeg'
-					})
-					.map((item, idx) => {
-						const isLast = idx === 4
-						return (
-							<>
-								<FlowStep
-									step={`${idx + 1}`.padStart(2, '0')}
-									title={item.title}
-									body={item.body}
-									image={item.image}
-								/>
-								{!isLast ? <Icon name="down-arrow" class="mb-[30px] mt-[39px] h-5 w-5" /> : null}
-							</>
-						)
-					})
+						body: `当スタジオのLINE公式アカウントよりお友達登録をお願いします。スタジオのブースやおすすめロケ地が見られたり、料金プラン詳細やドレスの種類の確認など、LINE公式アカウントでしか見られない「当スタジオの全て」が盛り沢山です！`
+					},
+					{
+						image: '/flow-steps/2.jpg',
+						title: '空き日程のご確認・相談ご予約',
+						body: `当スタジオのご予約システムより、空き日程のご確認やご来店・オンライン相談予約が可能です。ご予約はカンタン1分、画面の指示に従ってご予約をお願い致します！`
+					},
+					{
+						image: '/flow-steps/3.jpg',
+						title: 'ご来店・お打ち合わせ・衣装選び',
+						body: `当スタジオにご来店頂き、撮影の場所や衣装、スケジュールなどをお客様のご希望に寄り添いながらお打ち合わせさせて頂きます。当スタジオは追加料金なしでオプション選び放題、またロケーション撮影につきましても富山県内であれば許可が取れればどこでも撮影可能となっておりますので、お客様のご要望に沿ったプランをご提案させて頂きます。`
+					},
+					{
+						image: '/flow-steps/4.jpg',
+						title: '楽しく撮影♪',
+						body: `「インスタで見たあのポーズが撮りたい！」「ふたりの定番ポーズがあるんです！」など、リクエストがあればどんどんお申し付けください！当スタジオでは「楽しい撮影」もモットーの1つなので、お二人の一生の想い出に残るような撮影時間を提供させて頂きます♪もちろん、「全部カメラマンにおまかせ」もありです！`
+					},
+					{
+						image: '/flow-steps/5.jpg',
+						title: '納品',
+						body: `撮影が完了しましたら、後日ご自宅へ撮影写真をお届けさせて頂きます。お支払いは現金・クレジットカード・QRコード決済からお支払い可能です。`
+					}
+				].map((item, idx) => {
+					const isLast = idx === 4
+					return (
+						<>
+							<FlowStep
+								step={`${idx + 1}`.padStart(2, '0')}
+								title={item.title}
+								body={item.body}
+								image={item.image}
+							/>
+							{!isLast ? <Icon name="down-arrow" class="mb-[30px] mt-[39px] h-5 w-5" /> : null}
+						</>
+					)
+				})
 			}
 		</div>
 	</div>
@@ -271,10 +356,64 @@ const { items } = await GalleryItemsApi.list({ take: 12, skip: 0 })
 		<div class="mt-[67px] px-5">
 			<FaqAccordions
 				client:load
-				items={new Array(5).fill({
-					content: 'ございます！ 和装も洋装も様々な小物ご用意ございますので、お使いくださいませ。',
-					title: '撮影予定日、雨天の場合は延期できますか？'
-				})}
+				items={[
+					{
+						title: '撮影予定日、雨天の場合は延期できますか？',
+						content: 'ございます！ 和装も洋装も様々な小物ご用意ございますので、お使いくださいませ。'
+					},
+					{
+						title: '貸し出し小物はありますか？',
+						content: 'ございます！ 和装も洋装も様々な小物ご用意ございますので、お使いくださいませ。'
+					},
+					{
+						title: '髪飾りのレンタルはありますか？',
+						content: 'ございます！ 和装も洋装も様々な小物ご用意ございますので、お使いくださいませ。'
+					},
+					{
+						title: '腕や顔のレタッチはできますか？',
+						content: 'ございます！ 和装も洋装も様々な小物ご用意ございますので、お使いくださいませ。'
+					},
+					{
+						title: '当日の持ち物はなんですか？',
+						content: 'ございます！ 和装も洋装も様々な小物ご用意ございますので、お使いくださいませ。'
+					},
+					{
+						title: '持ち込み料かかりますか？',
+						content: 'ございます！ 和装も洋装も様々な小物ご用意ございますので、お使いくださいませ。'
+					},
+					{
+						title: 'ロケーション撮影の際、クリーニング代はかかりますか？',
+						content: 'ございます！ 和装も洋装も様々な小物ご用意ございますので、お使いくださいませ。'
+					},
+					{
+						title: 'カメラマンは男性か女性選べますか？',
+						content: 'ございます！ 和装も洋装も様々な小物ご用意ございますので、お使いくださいませ。'
+					},
+					{
+						title: '家族撮影可能ですか？',
+						content: 'ございます！ 和装も洋装も様々な小物ご用意ございますので、お使いくださいませ。'
+					},
+					{
+						title: 'ペットと撮影は可能ですか？',
+						content: 'ございます！ 和装も洋装も様々な小物ご用意ございますので、お使いくださいませ。'
+					},
+					{
+						title: '子持ちですが、子供も衣装を着て撮影はできますか？',
+						content: 'ございます！ 和装も洋装も様々な小物ご用意ございますので、お使いくださいませ。'
+					},
+					{
+						title: '結婚式で使うオープニングムービーは撮れますか？',
+						content: 'ございます！ 和装も洋装も様々な小物ご用意ございますので、お使いくださいませ。'
+					},
+					{
+						title: '母と父の黒留袖やモーニングコートはありますか？',
+						content: 'ございます！ 和装も洋装も様々な小物ご用意ございますので、お使いくださいませ。'
+					},
+					{
+						title: 'データ納品最短どれくらいですか？',
+						content: 'ございます！ 和装も洋装も様々な小物ご用意ございますので、お使いくださいませ。'
+					}
+				]}
 			/>
 		</div>
 	</div>
