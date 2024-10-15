@@ -2,6 +2,7 @@
 export const prerender = false
 
 import ImageHeader from '../../../components/page-components/common/image-header.astro'
+import DashDot from '../../../components/ui/dash-dot.astro'
 import Layout from '../../../layouts/layout.astro'
 import { PostsApi } from '../../../lib/api'
 import { formatDate } from '../../../lib/utils'
@@ -49,10 +50,10 @@ const date = formatDate(post.date)
 		<div class="content mt-[57px] md:mt-[114px]">
 			<Fragment set:html={post.content.rendered} />
 		</div>
-		<div class="mx-auto mt-[68px] flex items-center gap-2 md:mt-[40px]">
-			<p class="shrink-0 text-lg">詳しく知る</p>
-
-			<span class="h-[0.08rem] w-[90px] bg-black"></span>
+		<div class="mx-auto w-full max-w-[185px]">
+			<DashDot className="ml-0" href="/column">
+				<span class="shrink-0 text-lg">一覧に戻る</span>
+			</DashDot>
 		</div>
 	</div>
 </Layout>
