@@ -109,7 +109,7 @@ export const VoiceCards = () => {
 					</button>
 				</div>
 				<div className="flex flex-col items-center self-end">
-					<h2 className="text-[70px] font-semibold leading-[84px] text-[#333333] md:text-[93px]">
+					<h2 className="text-[70px] font-semibold leading-[84px] text-[#333333] english md:text-[93px]">
 						VOICE
 					</h2>
 					<div className="flex w-full items-center gap-4">

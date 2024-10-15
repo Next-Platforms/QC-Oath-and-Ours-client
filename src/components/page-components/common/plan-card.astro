@@ -22,7 +22,7 @@ const { image, heading, title, body, subItems, price } = Astro.props
 >
 	<img
 		src={image.src}
-		class="aspect-[107/100] w-full object-cover md:aspect-[unset]"
+		class="aspect-[107/100] w-full object-cover md:aspect-[unset] md:max-w-[50%]"
 		alt={image.alt}
 	/>
 	<div class="flex w-full flex-col items-center px-10 py-10 text-center">

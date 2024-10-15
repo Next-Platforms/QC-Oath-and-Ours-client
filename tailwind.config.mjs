@@ -37,15 +37,6 @@ export default {
 			}
 
 			addUtilities(newUtilities, ['responsive'])
-		},
-		function ({ addUtilities }) {
-			const newUtilities = {
-				'.english': {
-					fontFamily: 'Lato'
-				}
-			}
-
-			addUtilities(newUtilities)
 		}
 	]
 }
