@@ -48,7 +48,13 @@ const links = [
 	<body>
 		<header class="flex h-20 w-full items-center justify-center">
 			<div class="flex w-full items-center justify-between px-5 lg:hidden">
-				<span class="bg-[#757575] px-[52px] py-5 text-xs leading-[14px] text-white">ロゴ</span>
+				<a
+					href="/"
+					class="flex h-[54px] w-[128px] items-center gap-4 hover:opacity-70 focus-visible:opacity-70"
+				>
+					<Icon class="aspect-[100/24] h-auto w-[192px]" name="logo" />
+					<p class="sr-only">Home page</p>
+				</a>
 				<NavbarDrawer client:load />
 			</div>
 
@@ -104,13 +110,19 @@ const links = [
 				>
 			</div>
 			<div class="mt-[54px] flex items-center gap-4">
-				<a class="focus-within:opacity-70 hover:opacity-70" href="#"
+				<a
+					class="focus-within:opacity-70 hover:opacity-70"
+					href="https://www.instagram.com/oathandours_wedding/"
 					><Icon class="h-[36px] w-[36px]" name="instagram" /></a
 				>
-				<a class="focus-within:opacity-70 hover:opacity-70" href="#"
+				<a
+					class="focus-within:opacity-70 hover:opacity-70"
+					href="https://www.tiktok.com/@toyamawedding?_t=8ntvNhHmF9d&_r=1"
 					><Icon class="h-[36px] w-[36px]" name="tiktok" /></a
 				>
-				<a class="focus-within:opacity-70 hover:opacity-70" href="#"
+				<a
+					class="focus-within:opacity-70 hover:opacity-70"
+					href="https://youtube.com/channel/UCMviVkDtzEHEGwGXMEqumDA?si=RAiZKMOdZGpCrhgY"
 					><Icon class="h-[36px] w-[36px]" name="youtube" /></a
 				>
 			</div>
