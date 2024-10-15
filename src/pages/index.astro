@@ -23,7 +23,7 @@ const { items } = await GalleryItemsApi.list({ take: 12, skip: 0 })
 <Layout title="Oath and ours">
 	<!-- Hero section 1 -->
 
-	<div class="relative max-h-[630px] w-full bg-peach md:max-h-max">
+	<div class="relative max-h-[630px] w-full bg-peach md:max-h-[unset] md:pb-[106px]">
 		<div class="relative flex min-h-screen w-full items-center">
 			<div
 				class="relative top-16 z-10 mr-5 flex flex-col items-end gap-8 text-[25px] tracking-[0.4rem] md:top-0 md:ml-[100px] md:mr-0 md:items-start md:text-[54px]"
@@ -40,7 +40,7 @@ const { items } = await GalleryItemsApi.list({ take: 12, skip: 0 })
 				</div>
 			</div>
 			<img
-				class="absolute right-0 top-0 aspect-[75/100] max-h-[630px] w-full overflow-hidden rounded-bl-[50px] object-cover object-top md:aspect-[19/10] md:h-full md:max-h-[700px] md:w-auto md:rounded-bl-[250px]"
+				class="absolute right-0 top-0 aspect-[75/100] max-h-[630px] w-full overflow-hidden rounded-bl-[50px] object-cover object-top md:aspect-[19/10] md:h-full md:max-h-[unset] md:w-auto md:rounded-bl-[250px]"
 				src="/hero.jpg"
 				alt="A wedding picture"
 			/>
