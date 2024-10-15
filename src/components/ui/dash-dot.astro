@@ -1,0 +1,21 @@
+---
+export interface Props {
+	href: string
+	text?: string
+}
+
+const { href, text } = Astro.props
+---
+
+<a
+	class="group ml-auto mt-[61px] flex w-full max-w-[192px] items-center gap-2 hover:opacity-70 focus-visible:opacity-70"
+	href={href}
+>
+	<span class="shrink-0">{text}</span>
+	<slot />
+	<span class="relative h-[0.08rem] w-full bg-black">
+		<span
+			class="absolute left-[10px] top-1/2 h-2 w-2 -translate-y-1/2 rounded-full bg-black transition-all group-hover:left-[calc(100%-18px)] group-focus-visible:left-[calc(100%-18px)]"
+		></span>
+	</span>
+</a>

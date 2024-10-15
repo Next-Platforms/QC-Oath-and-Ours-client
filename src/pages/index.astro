@@ -10,6 +10,7 @@ import { VoiceCards } from '../components/page-components/home/voice-cards'
 import { Icon } from 'astro-icon/components'
 import FaqAccordions from '../components/page-components/home/faq-accordions'
 import { PostsApi, GalleryItemsApi } from '../lib/api'
+import DashDot from '../components/ui/dash-dot.astro'
 
 const { posts } = await PostsApi.list({
 	skip: 0,
@@ -22,7 +23,7 @@ const { items } = await GalleryItemsApi.list({ take: 12, skip: 0 })
 <Layout title="Oath and ours">
 	<!-- Hero section 1 -->
 
-	<div class="relative max-h-[630px] w-full bg-peach md:max-h-[unset] md:pb-[106px]">
+	<div class="relative max-h-[630px] w-full bg-peach md:max-h-max">
 		<div class="relative flex min-h-screen w-full items-center">
 			<div
 				class="relative top-16 z-10 mr-5 flex flex-col items-end gap-8 text-[25px] tracking-[0.4rem] md:top-0 md:ml-[100px] md:mr-0 md:items-start md:text-[54px]"
@@ -39,7 +40,7 @@ const { items } = await GalleryItemsApi.list({ take: 12, skip: 0 })
 				</div>
 			</div>
 			<img
-				class="absolute right-0 top-0 aspect-[75/100] max-h-[630px] w-full overflow-hidden rounded-bl-[50px] object-cover object-top md:aspect-[19/10] md:h-full md:max-h-[unset] md:w-auto md:rounded-bl-[250px]"
+				class="absolute right-0 top-0 aspect-[75/100] max-h-[630px] w-full overflow-hidden rounded-bl-[50px] object-cover object-top md:aspect-[19/10] md:h-full md:max-h-[700px] md:w-auto md:rounded-bl-[250px]"
 				src="/hero.jpg"
 				alt="A wedding picture"
 			/>
@@ -56,7 +57,7 @@ const { items } = await GalleryItemsApi.list({ take: 12, skip: 0 })
 			>
 				<h2 class="text-[70px] font-semibold leading-[84px] md:text-[93px]">STUDIO</h2>
 				<div class="flex w-full items-center gap-4">
-					<span class="h-1 w-full bg-black"></span>
+					<span class="h-[0.08rem] w-full bg-black"></span>
 					<p class="shrink-0 text-[35px]">スタジオ紹介</p>
 				</div>
 			</div>
@@ -65,13 +66,11 @@ const { items } = await GalleryItemsApi.list({ take: 12, skip: 0 })
 					お二人の「やりたい」を <br />
 					全て叶えるスタジオ
 				</h2>
-				<p class="mt-[71px] max-w-[45rem] text-[24px] leading-[37px]">
+				<p class="mt-[71px] max-w-[45rem] text-[24px] leading-[48px]">
 					1万本の花が演出するロマンティックな雰囲気を再現した洋装スタジオから、日本の美を凝縮した和装スタジオ、時にはスタジオを飛び出してロケーション撮影まで。お二人のやりたいを叶えた特別な瞬間を写真に収めます。
 				</p>
-				<a class="ml-auto mt-[61px] flex w-full max-w-[192px] items-center gap-2" href="/studio">
-					<span class="shrink-0">詳しく知る</span>
-					<span class="h-1 w-full bg-black"></span>
-				</a>
+
+				<DashDot href="/studio" text="詳しく知る" />
 			</div>
 			<img
 				class="mt-12 min-h-[332px] max-w-[90%] self-end overflow-hidden rounded-l-[100px] object-cover xl:mt-0 xl:max-w-[864px]"
@@ -95,7 +94,7 @@ const { items } = await GalleryItemsApi.list({ take: 12, skip: 0 })
 				<a class="mx-auto flex items-center gap-2" href="/studio">
 					<p class="shrink-0 text-lg">詳しく知る</p>
 
-					<span class="h-1 w-[90px] bg-black"></span>
+					<span class="h-[0.08rem] w-[90px] bg-black"></span>
 				</a>
 			</div>
 		</div>
@@ -111,7 +110,7 @@ const { items } = await GalleryItemsApi.list({ take: 12, skip: 0 })
 			>
 				<h2 class="text-[70px] font-semibold leading-[84px] english md:text-[93px]">GALLERY</h2>
 				<div class="flex w-full items-center gap-4">
-					<span class="h-1 w-full bg-[#333333]"></span>
+					<span class="h-[0.08rem] w-full bg-[#333333]"></span>
 					<p class="shrink-0 text-[20px] md:text-[35px]">ギャラリー</p>
 				</div>
 			</div>
@@ -133,17 +132,18 @@ const { items } = await GalleryItemsApi.list({ take: 12, skip: 0 })
 			>
 		</div>
 		<div class="flex flex-col gap-8 self-center">
-			<div class="flex items-center gap-2">
+			<DashDot href="/gallery">
 				<p class="shrink-0 text-lg">もっと見る</p>
-
-				<span class="h-1 w-full bg-black"></span>
-			</div>
-			<div class="flex items-end gap-3 text-base font-bold">
+			</DashDot>
+			<a
+				class="flex items-end gap-3 text-base font-bold hover:opacity-70 focus-visible:opacity-70"
+				href="https://www.instagram.com/oathandours_wedding/"
+			>
 				<Icon class="aspect-square h-auto w-[30px]" name={'instagram'} />
 				<p>
 					<span class="font-bold">Instagram</span>をチェック
 				</p>
-			</div>
+			</a>
 		</div>
 	</div>
 
@@ -154,7 +154,7 @@ const { items } = await GalleryItemsApi.list({ take: 12, skip: 0 })
 				PLAN
 			</h2>
 			<div class="flex w-full items-center gap-4">
-				<span class="h-1 w-full bg-[#333333]"></span>
+				<span class="h-[0.08rem] w-full bg-[#333333]"></span>
 				<p class="shrink-0 text-[20px] md:text-[35px]">プラン紹介</p>
 			</div>
 		</div>
@@ -265,7 +265,7 @@ const { items } = await GalleryItemsApi.list({ take: 12, skip: 0 })
 			<div class="ml-auto flex w-full max-w-max flex-col items-center pr-[10px] md:pr-0">
 				<h2 class="text-[70px] font-semibold leading-[84px] english md:text-[93px]">COLUMN</h2>
 				<div class="flex w-full items-center gap-4">
-					<span class="h-1 w-full bg-[#333333]"></span>
+					<span class="h-[0.08rem] w-full bg-[#333333]"></span>
 					<p class="shrink-0 text-[20px] md:text-[35px]">スタッフコラム</p>
 				</div>
 			</div>
@@ -286,7 +286,7 @@ const { items } = await GalleryItemsApi.list({ take: 12, skip: 0 })
 				FLOW
 			</h2>
 			<div class="flex w-full items-center gap-4">
-				<span class="h-1 w-full bg-[#333333]"></span>
+				<span class="h-[0.08rem] w-full bg-[#333333]"></span>
 				<p class="shrink-0 text-[20px] md:text-[35px]">撮影の流れ</p>
 			</div>
 		</div>
@@ -349,7 +349,7 @@ const { items } = await GalleryItemsApi.list({ take: 12, skip: 0 })
 		<div class="flex max-w-[326px] flex-col items-start pl-[10px] text-[#333333] md:pl-0">
 			<h2 class="text-[70px] font-semibold leading-[84px] md:text-[93px]">FAQ</h2>
 			<div class="flex w-full items-center gap-4">
-				<span class="h-1 w-full bg-[#333333]"></span>
+				<span class="h-[0.08rem] w-full bg-[#333333]"></span>
 				<p class="shrink-0 text-[20px] md:text-[35px]">よくある質問</p>
 			</div>
 		</div>
