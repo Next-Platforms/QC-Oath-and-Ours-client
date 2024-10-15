@@ -61,27 +61,49 @@ const allItems = [
 export const VoiceCards = () => {
 	const [start, setStart] = useState(0)
 
-	const items = useMemo(() => allItems.slice(start), [start])
+	const items = useMemo(() => {
+		const res = []
+		let i = start
+		while (res.length < allItems.length) {
+			const item = allItems[i]
+			if (item) {
+				res.push(item)
+			} else {
+				console.error('couldnt find voice item')
+				break
+			}
+			i = (i + 1) % allItems.length
+		}
+		return res
+	}, [start])
+
+	const handleStartChange = (val: number) => {
+		if (val < 0) {
+			setStart(items.length - 1)
+		} else if (val >= allItems.length) {
+			setStart(0)
+		} else {
+			setStart(val)
+		}
+	}
 
 	return (
-		<div className="mx-auto flex flex-col page-container">
-			<div className="mx-auto flex w-full flex-col-reverse items-end justify-between gap-[74px] pr-[10px] md:flex-row md:gap-0 md:pr-0">
+		<div className="mx-auto flex flex-col">
+			<div className="mx-auto flex w-full flex-col-reverse items-end justify-between gap-[74px] pr-[10px] page-container md:flex-row md:gap-0 md:pr-0">
 				<div className="flex items-center gap-[10px]">
 					<button
 						className="inline-flex aspect-square h-auto w-[60px] items-center justify-center rounded-full bg-black text-white"
 						onClick={() => {
-							setStart(start - 1)
+							handleStartChange(start - 1)
 						}}
-						disabled={start <= 0}
 					>
 						<img src={BackArrow.src} className="h-[15.5996px] w-[13.5px]" />
 					</button>
 					<button
 						className="inline-flex aspect-square h-auto w-[60px] items-center justify-center rounded-full bg-black text-white"
 						onClick={() => {
-							setStart(start + 1)
+							handleStartChange(start + 1)
 						}}
-						disabled={start >= allItems.length - 1}
 					>
 						<img src={NextArrow.src} className="h-[15.5996px] w-[13.5px]" />
 					</button>
@@ -91,12 +113,12 @@ export const VoiceCards = () => {
 						VOICE
 					</h2>
 					<div className="flex w-full items-center gap-4">
-						<span className="h-1 w-full bg-[#333333]"></span>
+						<span className="h-[0.08rem] w-full bg-[#333333]"></span>
 						<p className="shrink-0 text-[20px] md:text-[35px]">お客様の声</p>
 					</div>
 				</div>
 			</div>
-			<div className="mt-[26px] flex items-start gap-5 overflow-hidden px-5">
+			<div className="mt-[26px] flex max-w-[100vw] items-start gap-5 overflow-hidden px-5 page-container xl:max-w-[1260px]">
 				{items.map((item, idx) => {
 					return <VoiceCard key={idx} body={item.body} author={item.author} image={item.image} />
 				})}
