@@ -24,5 +24,10 @@ export default defineConfig({
 	},
 
 	output: 'hybrid',
-	adapter: vercel()
+	adapter: vercel({
+		isr: {
+			expiration: 60 * 5,
+			exclude: ['/gallery', '/column']
+		}
+	})
 })
