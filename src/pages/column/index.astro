@@ -7,6 +7,7 @@ import ColumnCard from '../../components/page-components/home/column-card.astro'
 import Layout from '../../layouts/layout.astro'
 import { PaginationControls } from '../../components/ui/pagination-controls'
 import { getSkip } from '../../lib/utils'
+import HeroImage from '../../../public/hero.jpg'
 
 const { searchParams } = Astro.url
 
@@ -25,7 +26,7 @@ const { posts, total } = await PostsApi.list({
 	<ImageHeader
 		title="COLUMN"
 		subtitle="コラム"
-		image="./hero.jpg"
+		image={HeroImage.src}
 		alt="Wedding photo of a couple"
 	/>
 	<div class="mx-auto pb-[100px] pt-[100px] page-container md:pb-[100px] md:pt-[100px]">

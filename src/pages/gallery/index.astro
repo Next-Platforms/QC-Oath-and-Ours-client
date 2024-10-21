@@ -8,6 +8,7 @@ import Layout from '../../layouts/layout.astro'
 import { getSkip } from '../../lib/utils'
 import { GalleryItemsApi, GalleryCategoryApi } from '../../lib/api'
 import { GalleryTabs } from '../../components/page-components/gallery/gallery-tabs'
+import HeroImg from '../../../public/hero/gallery.jpg'
 
 const { searchParams } = Astro.url
 
@@ -35,7 +36,7 @@ const { items, total } = await GalleryItemsApi.list({
 	<ImageHeader
 		title="GALLERY"
 		subtitle="ギャラリー"
-		image="./hero/gallery.jpg"
+		image={HeroImg.src}
 		alt="Wedding photo of a couple"
 		imgClassName="object-[70%]"
 	/>

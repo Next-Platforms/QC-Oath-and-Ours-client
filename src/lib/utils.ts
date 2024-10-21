@@ -1,3 +1,4 @@
+import { navigate } from 'astro:transitions/client'
 import { clsx, type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
@@ -75,5 +76,7 @@ export const updateSearchParams = (
 		currParams.set(key, value)
 	}
 
-	window.location.search = currParams.toString()
+	const url = new URL(window.location.href)
+	url.search = currParams.toString()
+	navigate(url.href)
 }
