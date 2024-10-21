@@ -1,17 +1,29 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { motion, type HTMLMotionProps } from 'framer-motion'
 import NextArrow from '../../../icons/next-arrow.svg'
 import BackArrow from '../../../icons/back-arrow.svg'
+import { cn } from '../../../lib/utils'
+import { useMediaQuery } from '../../../hooks/use-media-query'
 
-const VoiceCard = ({ body, author, image }: { body: string; author: string; image: string }) => {
+const VoiceCard = ({
+	body,
+	author,
+	image,
+	className,
+	...rest
+}: HTMLMotionProps<'div'> & { body: string; author: string; image: string }) => {
 	return (
-		<div className="flex w-full max-w-[400px] shrink-0 flex-col rounded-xl bg-white p-5">
+		<motion.div
+			{...rest}
+			className={cn('flex h-max shrink-0 flex-col rounded-xl bg-white p-5', className)}
+		>
 			<img className="h-[240px] w-full object-cover" src={image} />
 			<p className="mt-[26px] text-base leading-[33px] md:mt-7">{body}</p>
 			<span className="ml-auto mt-[26px] inline-block max-w-max text-base">
 				洋装スタジオプラン
 				{author}
 			</span>
-		</div>
+		</motion.div>
 	)
 }
 
@@ -58,58 +70,86 @@ const allItems = [
 	}
 ].map((item, idx) => ({ ...item, body: `${idx} - ${item.body}` }))
 
+const clampTo = (curr: number) => {
+	const min = 0
+	const max = allItems.length - 1
+
+	if (curr < min) {
+		return Math.min(max, allItems.length - (min - curr))
+	}
+
+	if (curr > max) {
+		return Math.max(min, min + Math.abs(allItems.length - curr))
+	}
+
+	return curr
+}
+
+const gap = 20
+
 export const VoiceCards = () => {
 	const [start, setStart] = useState(0)
+	const [transition, setTransition] = useState(0.3)
 
-	const items = useMemo(() => {
-		const res = []
-		let i = start
-		while (res.length < allItems.length) {
-			const item = allItems[i]
-			if (item) {
-				res.push(item)
-			} else {
-				console.error('couldnt find voice item')
-				break
-			}
-			i = (i + 1) % allItems.length
-		}
-		return res
-	}, [start])
+	const animatingFor = useRef<number | undefined>()
+	const [animating, setAnimating] = useState(false)
 
-	const handleStartChange = (val: number) => {
-		if (val < 0) {
-			setStart(items.length - 1)
-		} else if (val >= allItems.length) {
-			setStart(0)
+	const handleAnimationChange = (x: number | undefined) => {
+		if (x === undefined) {
+			animatingFor.current = undefined
+			setAnimating(false)
 		} else {
-			setStart(val)
+			animatingFor.current = x
+			setAnimating(true)
 		}
 	}
+
+	const handleStartChange = (val: number) => {
+		setStart(val)
+		setTransition(0.3)
+	}
+
+	const isMobile = useMediaQuery('md')
+	const size = isMobile ? 335 : 400
+
+	useEffect(() => {
+		if (allItems.length <= 0 || animating || animatingFor.current !== undefined) return
+
+		if (start < allItems.length && start >= 0) return
+
+		setStart(clampTo(start))
+		setTransition(0)
+	}, [start, animating])
 
 	return (
 		<div className="mx-auto flex flex-col">
 			<div className="mx-auto flex w-full flex-col-reverse items-end justify-between gap-[74px] pr-[10px] page-container md:flex-row md:gap-0 md:pr-0">
 				<div className="flex items-center gap-[10px]">
 					<button
-						className="inline-flex aspect-square h-auto w-[60px] items-center justify-center rounded-full bg-black text-white"
+						className="group inline-flex aspect-square h-auto w-[60px] items-center justify-center overflow-hidden rounded-full border border-black bg-black text-white transition hover:bg-white"
 						onClick={() => {
 							handleStartChange(start - 1)
 						}}
 					>
-						<img src={BackArrow.src} className="h-[15.5996px] w-[13.5px]" />
+						<img
+							src={BackArrow.src}
+							className="h-[15.5996px] w-[13.5px] transition-all group-hover:invert"
+						/>
 					</button>
 					<button
-						className="inline-flex aspect-square h-auto w-[60px] items-center justify-center rounded-full bg-black text-white"
+						className="group inline-flex aspect-square h-auto w-[60px] items-center justify-center overflow-hidden rounded-full border border-black bg-black text-white transition hover:bg-white"
 						onClick={() => {
 							handleStartChange(start + 1)
 						}}
 					>
-						<img src={NextArrow.src} className="h-[15.5996px] w-[13.5px]" />
+						<img
+							src={NextArrow.src}
+							className="h-[15.5996px] w-[13.5px] transition-all group-hover:invert"
+						/>
 					</button>
 				</div>
 				<div className="flex flex-col items-center self-end">
-					<h2 className="text-[70px] font-semibold leading-[84px] text-[#333333] english md:text-[93px]">
+					<h2 className="english text-[70px] font-semibold leading-[84px] text-[#333333] md:text-[93px]">
 						VOICE
 					</h2>
 					<div className="flex w-full items-center gap-4">
@@ -118,10 +158,39 @@ export const VoiceCards = () => {
 					</div>
 				</div>
 			</div>
-			<div className="mt-[26px] flex max-w-[100vw] items-start gap-5 overflow-hidden px-5 page-container xl:max-w-[1260px]">
-				{items.map((item, idx) => {
-					return <VoiceCard key={idx} body={item.body} author={item.author} image={item.image} />
-				})}
+			<div className="relative mt-[26px] flex h-[600px] w-[1260px] max-w-[100vw] items-start overflow-hidden px-5 xl:max-w-[1260px]">
+				<motion.div
+					className="absolute inset-0 w-max"
+					initial={false}
+					animate={{ x: ((size + gap) * allItems.length + (size + gap) * start) * -1 }}
+					transition={{ duration: transition }}
+					onAnimationStart={({ x }: { x: number }) => {
+						if (!transition) return
+						handleAnimationChange(x)
+					}}
+					onAnimationComplete={({ x }: { x: number }) => {
+						if (x === animatingFor.current) {
+							handleAnimationChange(undefined)
+						}
+					}}
+				>
+					{[...allItems, ...allItems, ...allItems].map((item, idx) => {
+						const offset = (size + gap) * idx
+
+						return (
+							<VoiceCard
+								body={item.body}
+								author={item.author}
+								image={item.image}
+								className="absolute inset-0 max-h-max"
+								animate={{
+									x: offset
+								}}
+								style={{ width: size }}
+							/>
+						)
+					})}
+				</motion.div>
 			</div>
 		</div>
 	)
