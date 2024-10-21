@@ -35,7 +35,7 @@ const { image, heading, title, body, subItems, price } = Astro.props
 			>{title}</b
 		>
 		<p
-			class="mt-6 max-w-[420px] text-justify text-sm font-medium leading-[16px] md:text-base md:leading-[33px]"
+			class="mt-6 max-w-[420px] text-justify text-sm font-medium leading-[22px] md:text-base md:leading-[33px]"
 		>
 			{body}
 		</p>
@@ -51,8 +51,8 @@ const { image, heading, title, body, subItems, price } = Astro.props
 			}
 		</div>
 		<div class="mt-[26px] flex items-baseline gap-2">
-			<span class="text-base font-medium leading-[19px] english">¥</span>
-			<b class="text-4xl font-medium leading-[43px] english">{price}</b>
+			<span class="english text-base font-medium leading-[19px]">¥</span>
+			<b class="english text-4xl font-medium leading-[43px]">{price}</b>
 			<p class="text-base font-medium leading-[19px]">(税込)</p>
 		</div>
 		<a
