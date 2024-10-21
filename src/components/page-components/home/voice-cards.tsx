@@ -183,6 +183,7 @@ export const VoiceCards = () => {
 								author={item.author}
 								image={item.image}
 								className="absolute inset-0 max-h-max"
+								initial={false}
 								animate={{
 									x: offset
 								}}
