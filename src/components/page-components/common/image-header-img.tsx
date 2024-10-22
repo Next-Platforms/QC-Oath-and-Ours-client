@@ -16,7 +16,7 @@ export const ImageHeaderImg = ({
 
 	return (
 		<img
-			src={isMobile ? mobileImage : image}
+			src={isMobile && mobileImage ? mobileImage : image}
 			className={cn(
 				'h-full w-full rounded-[inherit] rounded-b-[50px] object-cover object-top md:rounded-b-[250px]',
 				imgClassName
