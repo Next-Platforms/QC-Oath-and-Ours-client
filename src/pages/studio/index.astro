@@ -9,6 +9,7 @@ import Layout from '../../layouts/layout.astro'
 import ImageHeader from '../../components/page-components/common/image-header.astro'
 import { ResizeableIframe } from '../../components/ui/resizeable-iframe'
 import HeroImg from '../../../public/hero/studio.jpg'
+import MobileHeroImg from '../../../public/hero/studio-mobile.jpg'
 ---
 
 <Layout title="Features">
@@ -16,7 +17,7 @@ import HeroImg from '../../../public/hero/studio.jpg'
 		title="STUDIO 2"
 		subtitle="スタジオ紹介"
 		image={HeroImg.src}
-		mobileImage={'./hero/studio-mobile.jpg'}
+		mobileImage={MobileHeroImg.src}
 		alt="Wedding photo of a couple"
 	/>
 
