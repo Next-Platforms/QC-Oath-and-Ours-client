@@ -1,5 +1,5 @@
 ---
-import { cn } from '../../../lib/utils'
+import { ImageHeaderImg } from './image-header-img'
 
 export interface Props {
 	title: string
@@ -11,19 +11,17 @@ export interface Props {
 	imgClassName?: string
 }
 
-const { title, mobileImage, imgClassName, image, subtitle } = Astro.props
+const { title, mobileImage, imgClassName, alt, image, subtitle } = Astro.props
 ---
 
 <div class="flex flex-col items-center bg-peach pb-[60px] md:pb-[132px]">
-	<div class="relative w-full">
-		<img
-			src={image}
-			class={cn(
-				'aspect-[3/4] h-auto w-full rounded-b-[50px] object-cover object-top md:aspect-[32/10] md:rounded-b-[250px]',
-				imgClassName
-			)}
-			srcset={mobileImage ? `${mobileImage} 768w, ${image} 1024w` : undefined}
-			sizes="(max-width: 767px) 100vw, 1024px"
+	<div class="relative aspect-[3/4] h-auto w-full object-cover object-top md:aspect-[32/10]">
+		<ImageHeaderImg
+			client:only="react"
+			mobileImage={mobileImage}
+			imgClassName={imgClassName}
+			image={image}
+			alt={alt}
 		/>
 		<b
 			class="english absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[45%] text-[55px] font-bold leading-[96px] text-transparent brightness-75 md:text-[93px] md:leading-[162px]"

@@ -23,16 +23,17 @@ const breakpoints = {
 } as const
 type Breakpoint = keyof typeof breakpoints
 
+export const isMediaQuery = (value: Breakpoint) =>
+	typeof window !== 'undefined' ? window.matchMedia(breakpoints[value].query).matches : false
+
 export const useMediaQuery = (value: Breakpoint, initialValue = false) => {
 	const [matches, setMatches] = useState(
-		typeof window !== 'undefined'
-			? window.matchMedia(breakpoints[value].query).matches
-			: initialValue
+		typeof window !== 'undefined' ? isMediaQuery(value) : initialValue
 	)
 
 	useEffect(() => {
 		const handler = () => {
-			setMatches(window.matchMedia(breakpoints[value].query).matches)
+			setMatches(isMediaQuery(value))
 		}
 		window.addEventListener('resize', handler)
 
