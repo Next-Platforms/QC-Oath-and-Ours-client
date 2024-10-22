@@ -35,6 +35,8 @@ export const useMediaQuery = (value: Breakpoint, initialValue = false) => {
 		const handler = () => {
 			setMatches(isMediaQuery(value))
 		}
+		handler()
+
 		window.addEventListener('resize', handler)
 
 		return function cleanup() {

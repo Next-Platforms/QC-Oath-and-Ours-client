@@ -337,7 +337,7 @@ const { items } = await GalleryItemsApi.list({ take: 12, skip: 0 })
 
 	<!-- Voice section -->
 	<div class="flex flex-col rounded-t-[60px] bg-peach pb-[150px] pt-[184px] md:rounded-t-[150px]">
-		<VoiceCards client:visible />
+		<VoiceCards client:only="react" />
 	</div>
 
 	<!-- FAQ section -->
