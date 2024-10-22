@@ -33,20 +33,20 @@ const date = formatDate(post.date)
 			<div class="flex items-center gap-[5px]">
 				{
 					categories[0] ? (
-						<span class="shrink-0 rounded-[5px] bg-black px-[10px] py-[5px] text-sm leading-[16px] text-white">
+						<span class="shrink-0 rounded-[5px] bg-black px-[10px] py-[5px] text-sm leading-[22px] text-white">
 							{categories[0].name}
 						</span>
 					) : null
 				}
 				{
 					categories[1] ? (
-						<span class="shrink-0 rounded-md bg-[#BB9C52] px-[10px] py-[5px] text-sm leading-[16px] text-white">
+						<span class="shrink-0 rounded-md bg-[#BB9C52] px-[10px] py-[5px] text-sm leading-[22px] text-white">
 							{categories[1].name}
 						</span>
 					) : null
 				}
 			</div>
-			<p class="text-sm font-medium leading-[16px]">{date}</p>
+			<p class="text-sm font-medium leading-[22px]">{date}</p>
 		</div>
 		<div class="content mt-[57px] md:mt-[114px]">
 			<Fragment set:html={post.content.rendered} />
