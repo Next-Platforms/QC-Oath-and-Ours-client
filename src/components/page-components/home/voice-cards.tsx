@@ -160,8 +160,9 @@ export const VoiceCards = () => {
 			</div>
 			<div className="relative mt-[26px] flex h-[600px] w-[1260px] max-w-[100vw] items-start overflow-hidden px-5 xl:max-w-[1260px]">
 				<motion.div
-					className="absolute inset-0 w-max"
+					className="absolute inset-0 flex w-max items-start gap-5"
 					initial={false}
+					style={{ minWidth: (size + gap) * (allItems.length - 1) }}
 					animate={{ x: ((size + gap) * allItems.length + (size + gap) * start) * -1 }}
 					transition={{ duration: transition }}
 					onAnimationStart={({ x }: { x: number }) => {
