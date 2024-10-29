@@ -6,7 +6,8 @@ import DashDot from '../../../components/ui/dash-dot.astro'
 import Layout from '../../../layouts/layout.astro'
 import { PostsApi } from '../../../lib/api'
 import { formatDate } from '../../../lib/utils'
-import HeroImage from '../../../../public/hero.jpg'
+import HeroImage from '../../../../public/hero/column.png'
+import MobileHeroImage from '../../../../public/hero/column-mobile.png'
 
 const { slug } = Astro.params
 
@@ -24,6 +25,7 @@ const date = formatDate(post.date)
 		title="COLUMN"
 		subtitle="コラム"
 		image={HeroImage.src}
+		mobileImage={MobileHeroImage.src}
 		alt="Wedding photo of a couple"
 	/>
 	<div
