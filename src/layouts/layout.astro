@@ -46,6 +46,26 @@ const links = [
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<ViewTransitions />
+
+		<!-- Google Tag Manager -->
+		<script>
+			;(function (w, d, s, l, i) {
+				/* @ts-ignore */
+				w[l] = w[l] || []
+				/* @ts-ignore */
+				w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != 'dataLayer' ? '&l=' + l : ''
+				/* @ts-ignore */
+				j.async = true
+				/* @ts-ignore */
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+				/* @ts-ignore */
+				f.parentNode.insertBefore(j, f)
+			})(window, document, 'script', 'dataLayer', 'GTM-5CBNN4V6')
+		</script>
+		<!-- End Google Tag Manager -->
 	</head>
 	<body>
 		<header class="flex h-20 w-full items-center justify-center">
@@ -134,6 +154,15 @@ const links = [
 				><span class="english font-semibold">LINE</span>{' '}<span>で問い合わせる</span></a
 			>
 		</footer>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript
+			><iframe
+				src="https://www.googletagmanager.com/ns.html?id=GTM-5CBNN4V6"
+				height="0"
+				width="0"
+				style="display:none;visibility:hidden"></iframe></noscript
+		>
+		<!-- End Google Tag Manager (noscript) -->
 	</body>
 </html>
 <script is:inline>

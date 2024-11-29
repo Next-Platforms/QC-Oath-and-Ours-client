@@ -180,6 +180,7 @@ export const VoiceCards = () => {
 
 						return (
 							<VoiceCard
+								key={idx}
 								body={item.body}
 								author={item.author}
 								image={item.image}
