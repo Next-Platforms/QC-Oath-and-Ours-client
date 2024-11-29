@@ -6,9 +6,10 @@ export interface Props {
 		pretext?: string
 		price: number | string
 	}>
+	image: string
 }
 
-const { prices, title } = Astro.props
+const { prices, title, image } = Astro.props
 ---
 
 <div
@@ -16,7 +17,7 @@ const { prices, title } = Astro.props
 >
 	<img
 		class="aspect-[176/100] h-auto w-full rounded-md object-cover md:aspect-[148/100] md:max-w-[250px]"
-		src="./menu.jpg"
+		src={image}
 	/>
 	<div class="flex w-full flex-col items-center gap-[26px] md:flex-row md:justify-between">
 		<p class="text-base font-bold leading-[19px]">{title}</p>
@@ -30,8 +31,8 @@ const { prices, title } = Astro.props
 							{pretext ? <p class="text-base leading-[19px]">{pretext}</p> : null}
 
 							<div class="ml-3 flex items-baseline md:ml-8">
-								<span class="mr-2 text-base font-medium leading-[19px] english">¥</span>
-								<b class="mr-[6px] text-[26px] font-medium leading-[31px] english">{price}</b>
+								<span class="english mr-2 text-base font-medium leading-[19px]">¥</span>
+								<b class="english mr-[6px] text-[26px] font-medium leading-[31px]">{price}</b>
 								<p class="text-base font-medium leading-[19px]">(税込)</p>
 							</div>
 						</div>
