@@ -2,9 +2,10 @@
 export interface Props {
 	title: string
 	price: string | number | 'ok'
+	inclPriceBrackets?: boolean
 }
 
-const { title, price } = Astro.props
+const { title, price, inclPriceBrackets = true } = Astro.props
 ---
 
 <div
@@ -17,9 +18,9 @@ const { title, price } = Astro.props
 				<span class="text-base leading-[19px]">持参OK</span>
 			) : (
 				<>
-					<span class="mr-2 text-base font-medium leading-[19px] english">¥</span>
-					<b class="mr-[6px] text-[26px] font-medium leading-[31px] english">{price}</b>
-					<p class="text-base font-medium leading-[19px]">(税込)</p>
+					<span class="english mr-2 text-base font-medium leading-[19px]">¥</span>
+					<b class="english mr-[6px] text-[26px] font-medium leading-[31px]">{price}</b>
+					{inclPriceBrackets ? <p class="text-base font-medium leading-[19px]">(税込)</p> : null}
 				</>
 			)
 		}
