@@ -282,7 +282,9 @@ const { items } = await GalleryItemsApi.list({ take: 12, skip: 0 })
 				</div>
 			</div>
 		</div>
-		<div class="mt-16 flex flex-col items-center gap-[70px] self-center px-5 md:flex-row">
+		<div
+			class="mt-16 flex flex-col items-center gap-[70px] self-center px-5 page-container md:flex-row"
+		>
 			{
 				posts.map((post) => {
 					return <ColumnCard post={post} />
