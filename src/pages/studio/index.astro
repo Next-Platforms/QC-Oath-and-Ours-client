@@ -10,6 +10,7 @@ import ImageHeader from '../../components/page-components/common/image-header.as
 import { ResizeableIframe } from '../../components/ui/resizeable-iframe'
 import HeroImg from '../../../public/hero/studio.jpg'
 import MobileHeroImg from '../../../public/hero/studio-mobile.png'
+import { GoogleReviews } from '../../components/page-components/studio/google-reviews'
 ---
 
 <Layout title="Features">
@@ -391,6 +392,10 @@ import MobileHeroImg from '../../../public/hero/studio-mobile.png'
 							return <MapInfoItem {...item} />
 						})
 					}
+				</div>
+
+				<div class="mt-[96px]">
+					<GoogleReviews client:only="react" />
 				</div>
 			</div>
 		</div>
