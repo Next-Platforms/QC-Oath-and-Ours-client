@@ -95,19 +95,128 @@ const { items } = await GalleryItemsApi.list({ take: 12, skip: 0 })
 		</div>
 
 		<div
-			class="mx-auto flex w-full max-w-max flex-col items-center gap-10 px-10 lg:flex-row lg:px-10"
+			class="mx-auto flex w-full max-w-[1380px] flex-col items-center gap-10 px-10 lg:gap-[50px]"
 		>
-			<img class="w-full max-w-[485px] shrink-0" src="/line-image.png" alt="" />
-			<div class="flex flex-col gap-4 lg:gap-10">
-				<p class="max-w-[650px] text-base leading-[30px] md:text-xl lg:leading-[44px]">
-					LINE公式アカウントよりお友達登録をお願いします。
-					スタジオのブースやおすすめロケ地が見られたり、料金プラン詳細やドレスの種類の確認など、LINE公式アカウントでしか見られない「当スタジオの全て」が盛り沢山です！
-				</p>
-				<a
-					href={LINEUrl}
-					class="focus-visible:dark-lime mt-4 inline-flex h-[48px] max-w-max items-center justify-center text-nowrap rounded-[5px] bg-lime px-8 text-xl font-bold leading-[44px] text-white hover:bg-dark-lime"
-					><span>お友達登録はこちら！</span></a
+			<div class="flex items-end gap-[42px]">
+				<div class="h-[92px] w-[3px] -rotate-[20deg] bg-[#B6DD97] lg:w-[6px]"></div>
+				<p
+					class="max-w-[256px] text-center text-[26px] leading-[40px] lg:max-w-[756px] lg:text-[42px]"
 				>
+					LINEのメニューから このような内容も ご確認いただけます！
+				</p>
+				<div class="h-[92px] w-[3px] rotate-[20deg] bg-[#B6DD97] lg:w-[6px]"></div>
+			</div>
+			<div class="rounded-[50px] border-[3px] border-[#B6DD97] px-2.5 py-[72px] md:px-[90px]">
+				<div
+					class="flex flex-col items-center gap-8 lg:grid lg:grid-cols-[minmax(0,_max-content)_1fr] lg:gap-[70px]"
+				>
+					<img
+						class="aspect-[0.587] h-[602px] max-w-[355px] object-cover lg:h-full lg:max-w-[436px]"
+						src={'/line-image.png'}
+					/>
+					<div class="flex max-w-[720px] flex-col">
+						<p
+							class="text-center text-[26px] font-medium leading-[35px] text-[#E85858] lg:text-[36px] lg:leading-[53px]"
+						>
+							気になる情報はLINEでチェック！
+						</p>
+						<div class="mb-10 mt-5 h-[2px] w-full bg-[#F0EAE5]"></div>
+						<div>
+							<ul class="list-disc space-y-2 pl-6">
+								{
+									[
+										'衣装',
+										'富山県のオススメロケ地情報',
+										'流れがわかる動画',
+										'先輩花嫁様の声',
+										'ヘアカタログ',
+										'人気ポーズ集など…'
+									].map((text) => {
+										return (
+											<li class="text-[22px] font-bold leading-[51px] lg:text-[24px] lg:leading-[55px]">
+												{text}
+											</li>
+										)
+									})
+								}
+							</ul>
+							<p class="mt-[52px] text-[22px] leading-[45px] lg:text-[24px] lg:leading-[49px]">
+								LINE公式アカウントよりお友達登録をお願いします。
+								スタジオのブースやおすすめロケ地が見られたり、料金プラン詳細やドレスの種類の確認など、LINE公式アカウントでしか見られない「当スタジオの全て」が盛り沢山です！
+							</p>
+
+							<a
+								href={LINEUrl}
+								class="focus-visible:dark-lime mt-[29px] inline-flex min-h-16 max-w-max items-center justify-center rounded-[5px] bg-lime px-8 text-center text-xl font-bold leading-[44px] text-white hover:bg-dark-lime lg:text-[24px]"
+								><span>LINEで衣装や 料金・ロケ地などすべて見る</span></a
+							>
+						</div>
+					</div>
+				</div>
+				<div class="mt-[62px] flex flex-col gap-[50px] lg:gap-[60px]">
+					<!-- Image grid -->
+					<div class="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-x-[150px] lg:gap-y-[80px]">
+						{
+							[
+								{
+									title: '衣装',
+									image: '/line-image.png',
+									description:
+										'見たい衣装を選択すると、LINEの返信でドレスの写真が送られるので見やすい！'
+								},
+								{
+									title: '富山県のオススメロケ地情報',
+									image: '/line-image.png',
+									description:
+										'場所を選択すると実際の撮影写真と特徴が見られるのでご希望のイメージを探しやすい！'
+								},
+								{
+									title: '流れがわかる動画',
+									image: '/line-image.png',
+									description:
+										'打ち合わせ、試着、当日のメイク、着付け撮影風景までをダイジェストでご紹介！'
+								},
+								{
+									title: '先輩花嫁様の声',
+									image: '/line-image.png',
+									description:
+										'実際に撮影された方からのレビューも公開！スタジオ選びの参考にご覧ください！'
+								},
+								{
+									title: 'ヘアカタログ',
+									image: '/line-image.png',
+									description:
+										'今人気のヘアスタイルもLINEでチェック！シニヨンやアップスタイル、人気の飾りなど盛りだくさん！'
+								},
+								{
+									title: '人気ポーズ集',
+									image: '/line-image.png',
+									description:
+										'どんなポーズが美しく見えるかはプロにお任せください！実際の写真でイメージも付きやすいです◎'
+								}
+							].map(({ title, image, description }) => {
+								return (
+									<div>
+										{/* Title */}
+										<div class="flex items-end gap-2">
+											<div class="h-[2px] w-full max-w-[100px] bg-[#F0EAE5]" />
+											<p class="text-[26px] font-bold lg:text-[28px]">{title}</p>
+										</div>
+										<img class="mt-8" src={image} alt={'An image of line'} />
+										<p class="mt-[34px] text-[20px]">{description}</p>
+									</div>
+								)
+							})
+						}
+					</div>
+					<div class="flex flex-col items-center">
+						<a
+							href={LINEUrl}
+							class="focus-visible:dark-lime mx-auto inline-flex w-full max-w-max items-center justify-center self-center rounded-[5px] bg-lime px-8 py-7 text-center text-[22px] font-bold leading-[44px] text-white hover:bg-dark-lime lg:py-10 lg:text-[36px]"
+							><span>LINEで衣装や 料金・ロケ地などすべて見る</span></a
+						>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
