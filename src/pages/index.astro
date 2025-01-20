@@ -108,12 +108,11 @@ const { items } = await GalleryItemsApi.list({ take: 12, skip: 0 })
 			</div>
 			<div class="rounded-[50px] border-[3px] border-[#B6DD97] px-4 py-[72px] md:px-[90px]">
 				<div
-					class="flex flex-col items-center gap-8 lg:grid lg:grid-cols-[minmax(0,_max-content)_1fr] lg:gap-[70px]"
+					class="flex flex-col items-center gap-8 xl:grid xl:grid-cols-[minmax(436px,_max-content)_1fr] xl:gap-[70px]"
 				>
-					<img
-						class="aspect-[0.587] h-[602px] max-w-[355px] object-cover lg:h-full lg:max-w-[436px]"
-						src={'/line/mobile.png'}
-					/>
+					<div class="relative aspect-[0.59] h-[602px] max-w-[355px] xl:h-full xl:max-w-[525px]">
+						<img class={'w-full h-full object-cover'} src={'/line/mobile.png'} />
+					</div>
 					<div class="flex max-w-[720px] flex-col">
 						<p
 							class="text-center text-[26px] font-medium leading-[35px] text-[#E85858] lg:text-[36px] lg:leading-[53px]"
@@ -147,7 +146,7 @@ const { items } = await GalleryItemsApi.list({ take: 12, skip: 0 })
 
 							<a
 								href={LINEUrl}
-								class="focus-visible:dark-lime mt-[29px] inline-flex min-h-16 max-w-max items-center justify-center rounded-[5px] bg-lime px-8 py-4 text-center text-xl font-bold leading-[1.6] text-white hover:bg-dark-lime lg:text-[24px]"
+								class="focus-visible:dark-lime mt-[29px] inline-flex min-h-16 max-w-max items-center justify-center rounded-[5px] bg-lime px-8 py-4 text-center text-xl font-bold leading-[1.6] text-white hover:bg-dark-lime lg:whitespace-nowrap lg:text-[24px]"
 							>
 								<span class="hidden md:inline">LINEで衣装や 料金・ロケ地などすべて見る</span>
 								<span class="md:hidden">LINEで衣装や<br />料金・ロケ地などすべて見る</span>
